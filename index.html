@@ -32,8 +32,8 @@
       </a>
  
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
-        <button class="nav-link" data-target="#about">About</button>
         <button class="nav-link" data-target="#projects">Project</button>
+        <button class="nav-link" data-target="#about">About</button>
         <button class="nav-link" data-target="#skills">Skills</button>
         <button class="nav-link" data-target="#experience">Experience</button>
       </nav>
@@ -53,8 +53,8 @@
   <!-- Mobile menu -->
   <div class="mobile-overlay" id="mobileOverlay">
     <div class="mobile-menu" id="mobileMenu">
-      <button class="mobile-link" data-target="#about">About</button>
       <button class="mobile-link" data-target="#projects">Project</button>
+      <button class="mobile-link" data-target="#about">About</button>
       <button class="mobile-link" data-target="#skills">Skills</button>
       <button class="mobile-link" data-target="#experience">Experience</button>
       <a href="#contact" class="mobile-say-hi">Say Hi 👋</a>
@@ -121,7 +121,7 @@
               </span>
             </a>
             
-            <a href="#about" class="btn btn--secondary btn--glow btn--with-icon">
+            <a href="AboutMe/about.html#hero" class="btn btn--secondary btn--glow btn--with-icon">
               <span class="btn-text">See more about me</span>
               <span class="btn-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -134,6 +134,150 @@
           <button class="hero__scroll-cue" id="scrollCue" aria-label="Scroll to About section">
             <span></span>
           </button>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects" id="projects">
+      <div class="section__inner">
+        <div class="projects__heading">
+          <h2 class="section__title" data-reveal>Recent Projects</h2>
+          <p class="section__subtitle projects__subtitle" data-reveal>A look at the projects I've built during school and my on‑the‑job training.</p>
+        </div>
+
+        <div class="projects__grid">
+          <!-- FaciliTrack (Desktop) -->
+          <article class="project-card project-card--desktop" data-reveal>
+            <div class="project-card__preview device-frame device-frame--desktop">
+              <div class="device-frame__window">
+                <div class="device-frame__bar">
+                  <span class="device-dot device-dot--red"></span>
+                  <span class="device-dot device-dot--yellow"></span>
+                  <span class="device-dot device-dot--green"></span>
+                </div>
+                <div class="device-frame__screen">
+                  <video class="device-frame__video" src="assets/mp4/Facilitrack_Desktop.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title project-card__title--link">FaciliTrack</h3>
+              <p class="project-card__desc">An admin-side desktop system for managing campus facilities. Admins can generate user IDs, approve or reject facility event requests, monitor facility usage, and manage items, facilities, and user accounts — a full CRUD system built to streamline venue scheduling.</p>
+            </div>
+          </article>
+
+          <!-- Crud Project (Desktop) -->
+          <article class="project-card project-card--desktop" data-reveal>
+            <div class="project-card__preview device-frame device-frame--desktop">
+              <div class="device-frame__window">
+                <div class="device-frame__bar">
+                  <span class="device-dot device-dot--red"></span>
+                  <span class="device-dot device-dot--yellow"></span>
+                  <span class="device-dot device-dot--green"></span>
+                </div>
+                <div class="device-frame__screen">
+                  <video class="device-frame__video" src="assets/mp4/0825.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title project-card__title--link">Crud Project</h3>
+              <p class="project-card__desc">One of my earliest school projects and the foundation of how I learned CRUD systems. Styled with a League of Legends theme since I'm a fan and gamer, it doubled as a fun UI experiment while I picked up the basics of building a desktop application.</p>
+            </div>
+          </article>
+
+          <!-- Portfolio Website -->
+          <article class="project-card project-card--website" data-reveal>
+            <div class="project-card__preview device-frame device-frame--desktop">
+              <div class="device-frame__window">
+                <div class="device-frame__bar">
+                  <span class="device-dot device-dot--red"></span>
+                  <span class="device-dot device-dot--yellow"></span>
+                  <span class="device-dot device-dot--green"></span>
+                  <div class="device-frame__url">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    mycitytotravel.com
+                  </div>
+                </div>
+                <div class="device-frame__screen">
+                  <video class="device-frame__video" src="assets/mp4/CISCO_Website.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title project-card__title--link">My City I Want to Travel</h3>
+              <p class="project-card__desc">My final project for the Cisco HTML Essentials course offered by DICT — a travel-themed website showcasing destinations I'd love to visit someday, built to apply core HTML and CSS fundamentals.</p>
+              <div class="project-card__actions">
+                <a href="../CISCO/Index.html" class="link-btn link-btn--icon" target="_blank" rel="noopener">
+                  Visit Site
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Client Website -->
+          <article class="project-card project-card--website" data-reveal>
+            <div class="project-card__preview device-frame device-frame--desktop">
+              <div class="device-frame__window">
+                <div class="device-frame__bar">
+                  <span class="device-dot device-dot--red"></span>
+                  <span class="device-dot device-dot--yellow"></span>
+                  <span class="device-dot device-dot--green"></span>
+                  <div class="device-frame__url">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    mybrandingweb.com
+                  </div>
+                </div>
+                <div class="device-frame__screen">
+                  <video class="device-frame__video" src="assets/MP4/Branding_Website.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title project-card__title--link">My Branding Web</h3>
+              <p class="project-card__desc">A personal branding website built purely for fun — a self-driven experiment to explore layout, visual identity, and front-end design outside of school requirements.</p>
+              <div class="project-card__actions">
+                <a href="../Branding/index.html" class="link-btn link-btn--icon" target="_blank" rel="noopener">
+                  Visit Site
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- FaciliTrack (Mobile) -->
+          <article class="project-card project-card--mobile" data-reveal>
+            <div class="project-card__preview device-frame device-frame--phone">
+              <div class="device-frame__phone">
+                <div class="device-frame__notch"></div>
+                <div class="device-frame__screen device-frame__screen--phone">
+                  <video class="device-frame__video" src="assets/mp4/FaciliTrack_Mobile.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title project-card__title--link">FaciliTrack - Mobile</h3>
+              <p class="project-card__desc">The Android companion app for FaciliTrack's scheduling system. Users can submit facility event requests, check which venues are already occupied, and view the program for any given event date — all from their phone.</p>
+            </div>
+          </article>
+
+          <!-- Field Monitoring - EMB DENR R6 (Mobile) -->
+          <article class="project-card project-card--mobile" data-reveal>
+            <div class="project-card__preview device-frame device-frame--phone">
+              <div class="device-frame__phone">
+                <div class="device-frame__notch"></div>
+                <div class="device-frame__screen device-frame__screen--phone">
+                  <video class="device-frame__video" src="assets/mp4/DENR_Mobile.mp4" autoplay muted loop playsinline preload="metadata"></video>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title project-card__title--link">Field Monitoring - EMB DENR R6</h3>
+              <p class="project-card__desc">Developed during my OJT with the Environmental Management Bureau (EMB), DENR Region 6, this app digitizes field monitoring for environmental compliance inspections — replacing paper-based reports with a mobile system that logs field data and generates reports in the exact government format.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -158,7 +302,7 @@
               </p>
  
               <div class="about-lead__cards">
-                <a href="#about-more" class="about-card" data-target="#about-more">
+                <a href="../AboutMe/about.html" class="about-card" data-target="#about-more">
                   <span class="about-card__image">
                     <img src="assets/avatar1.png" alt="Illustrated avatar of Kenn in business attire" loading="lazy" />
                   </span>
@@ -170,7 +314,7 @@
                   </span>
                 </a>
  
-                <a href="assets/resume.pdf" class="about-card" download>
+                <a href="assets/Document/KennDaniel_Resume.pdf" class="about-card" download>
                   <span class="about-card__image">
                     <img src="assets/avatar2.png" alt="Illustrated avatar of Kenn holding a phone" loading="lazy" />
                   </span>
@@ -187,74 +331,6 @@
           </div>
         </div>
  
-      </div>
-    </section>
- 
-    <!-- ===================== PROJECTS ===================== -->
-    <section class="section projects" id="projects">
-      <div class="section__inner">
-        <p class="eyebrow" data-reveal>Selected Work</p>
-        <h2 class="section__title" data-reveal>Featured Projects</h2>
-        <p class="section__subtitle" data-reveal>A few things I've built recently, and the projects I'm currently working on.</p>
- 
-        <div class="projects__grid">
-          <article class="project-card" data-reveal>
-            <div class="project-card__preview">
-              <img src="assets/project-facilitrack.svg" alt="FaciliTrack dashboard preview on a laptop screen" loading="lazy">
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">FaciliTrack</h3>
-              <p class="project-card__desc">Campus facility and venue management system.</p>
-              <ul class="project-card__tech">
-                <li>Java</li><li>Android</li><li>Firebase</li><li>Firestore</li><li>Java Swing</li>
-              </ul>
-              <div class="project-card__actions">
-                <a href="#" class="link-btn link-btn--icon">
-                  <span>View Feature's</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
- 
-          <article class="project-card" data-reveal>
-            <div class="project-card__preview">
-              <img src="assets/project-embr6.svg" alt="EMBR6 Monitoring App shown on a mobile phone" loading="lazy">
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">EMBR6 Monitoring App</h3>
-              <p class="project-card__desc">Field monitoring application for environmental compliance.</p>
-              <ul class="project-card__tech">
-                <li>Android</li><li>Java</li><li>SQLite</li><li>Firebase</li><li>PDF/Word generation</li>
-              </ul>
-              <div class="project-card__actions">
-                <a href="#" class="link-btn link-btn--icon">
-                  <span>View Feature's</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
- 
-          <article class="project-card" data-reveal>
-            <div class="project-card__preview">
-              <img src="assets/project-brand.svg" alt="Kenn Brand chocolate milk branding website preview" loading="lazy">
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Branding Website</h3>
-              <p class="project-card__desc">Product branding site for a local chocolate milk drink, Kenn Brand.</p>
-              <ul class="project-card__tech">
-                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Brand Design</li>
-              </ul>
-              <div class="project-card__actions">
-                <a href="#" class="link-btn link-btn--icon">
-                  <span>View Project</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
  
@@ -580,13 +656,13 @@
  
       <div class="footer__right">
         <div class="footer__social">
-          <a href="#" aria-label="Facebook" class="social-icon">
+          <a href="https://web.facebook.com/" aria-label="Facebook" class="social-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
  
-          <a href="#" aria-label="Gmail" class="social-icon">
+          <a href="https://mail.google.com/mail/u/0/#inbox" aria-label="Gmail" class="social-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-1.023.733-1.855 1.636-1.855h.012L12 10.182 22.352 3.602h.012C23.267 3.602 24 4.434 24 5.457z"/>
             </svg>
