@@ -1,0 +1,60 @@
+<svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="br-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5C3A21"/>
+      <stop offset="55%" stop-color="#3E2517"/>
+      <stop offset="100%" stop-color="#241408"/>
+    </linearGradient>
+    <linearGradient id="br-bottle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A4A28"/>
+      <stop offset="45%" stop-color="#5A3319"/>
+      <stop offset="100%" stop-color="#3B2010"/>
+    </linearGradient>
+    <linearGradient id="br-gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E7C27D"/>
+      <stop offset="100%" stop-color="#C9974C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="480" height="320" fill="url(#br-bg)"/>
+
+  <!-- warm glow -->
+  <ellipse cx="120" cy="150" rx="220" ry="180" fill="#8A5A32" opacity="0.25"/>
+  <circle cx="430" cy="60" r="90" fill="#E7C27D" opacity="0.08"/>
+
+  <!-- text block -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <rect x="40" y="56" width="150" height="16" rx="3" fill="#C9974C" opacity="0.9"/>
+    <text x="40" y="52" fill="#D9A855" font-size="11" letter-spacing="3" opacity="0.001">FEATURED BRAND</text>
+    <text x="40" y="120" fill="#F5E9D6" font-size="40" font-weight="700">Kenn Brand</text>
+    <text x="40" y="148" fill="#D9A855" font-size="18" font-style="italic">Choco na Gatas</text>
+  </g>
+
+  <rect x="40" y="170" width="190" height="8" rx="4" fill="#F5E9D6" opacity="0.28"/>
+  <rect x="40" y="186" width="150" height="8" rx="4" fill="#F5E9D6" opacity="0.22"/>
+
+  <!-- CTA button -->
+  <rect x="40" y="222" width="150" height="34" rx="17" fill="url(#br-gold)"/>
+  <text x="115" y="243" fill="#3B2010" font-size="12" font-weight="700" text-anchor="middle" font-family="Manrope, sans-serif" letter-spacing="1">EXPLORE THE BRAND</text>
+
+  <!-- bottle illustration -->
+  <g>
+    <path d="M372 60 h26 v22 l12 18 v148 a10 10 0 0 1 -10 10 h-30 a10 10 0 0 1 -10 -10 v-148 l12 -18 z" fill="url(#br-bottle)" stroke="#241408" stroke-width="1"/>
+    <rect x="366" y="52" width="38" height="14" rx="4" fill="#241408"/>
+    <rect x="371" y="40" width="28" height="14" rx="3" fill="#C9974C"/>
+
+    <!-- label -->
+    <rect x="358" y="140" width="66" height="70" rx="4" fill="#F5E9D6"/>
+    <rect x="366" y="150" width="50" height="10" rx="2" fill="#3B2010" opacity="0.85"/>
+    <rect x="366" y="166" width="38" height="6" rx="2" fill="#8A5A32" opacity="0.7"/>
+    <rect x="366" y="178" width="50" height="6" rx="2" fill="#8A5A32" opacity="0.5"/>
+    <circle cx="391" cy="196" r="7" fill="#C9974C"/>
+
+    <!-- shine -->
+    <rect x="378" y="80" width="6" height="120" rx="3" fill="#F5E9D6" opacity="0.18"/>
+  </g>
+
+  <!-- floating cacao pods -->
+  <ellipse cx="270" cy="255" rx="16" ry="24" fill="#8A5A32" opacity="0.55" transform="rotate(-18 270 255)"/>
+  <ellipse cx="300" cy="270" rx="12" ry="18" fill="#C9974C" opacity="0.4" transform="rotate(12 300 270)"/>
+</svg>

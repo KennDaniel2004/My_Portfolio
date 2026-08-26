@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenn Brand — Choco na Gatas</title>
+<meta name="description" content="Kenn Brand Choco na Gatas — a 400ml premium chocolate milk drink made with real Philippine cacao. Small batch, cold chain, 14 day fresh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="pour-bar" aria-hidden="true"><div class="pour-fill" id="pourFill"></div></div>
+
+<nav class="dot-nav" aria-label="Section navigation">
+  <a href="#hero" data-label="Hero"></a>
+  <a href="#form" data-label="Form"></a>
+  <a href="#taste" data-label="Taste"></a>
+  <a href="#origin" data-label="Origin"></a>
+  <a href="#final" data-label="Final"></a>
+</nav>
+
+<!-- 01 — HERO : scroll-scrubbed video assembly -->
+<section id="hero" class="hero-scrub">
+  <div class="hero-sticky">
+    <canvas id="heroCanvas" aria-label="Kenn Brand Choco na Gatas assembling from swirling chocolate, cacao and almonds"></canvas>
+    <div class="hero-scrim"></div>
+
+    <div class="slate-bar">
+      <span class="slate-left">KENN&nbsp;BRAND&nbsp;·&nbsp;FILM&nbsp;—&nbsp;01</span>
+      <span class="slate-mid">CINEMATIC ASSEMBLY &nbsp;·&nbsp; SCROLL TO PLAY</span>
+      <span class="slate-right">©2026</span>
+    </div>
+
+    <div class="hero-text hero-text-open" id="heroTextOpen">
+      <p class="eyebrow">Introducing</p>
+      <h1 class="hero-title">
+        <span class="hero-brand">Kenn Brand</span>
+        <span class="hero-product">Choco na Gatas</span>
+      </h1>
+      <p class="hero-intro">Small-batch chocolate milk made with real Philippine cacao — stone-ground, slow-melted, cold-chain fresh from Barotac Viejo, Iloilo to your bottle.</p>
+      <a href="#form" class="hero-cta">
+        Discover the bottle
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+
+    <div class="hero-text hero-text-close" id="heroTextClose">
+      <p class="hero-sub">400ml &nbsp;·&nbsp; Real Cacao &nbsp;·&nbsp; Cold Chain</p>
+    </div>
+
+    <div class="scroll-cue" id="scrollCue">
+      <span>Scroll to experience</span>
+      <div class="scroll-line"><i></i></div>
+    </div>
+
+    <div class="scrub-progress" aria-hidden="true"><i id="scrubFill"></i></div>
+  </div>
+</section>
+
+<div class="drip" aria-hidden="true">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none"><path d="M0,0 H1200 V8 C1160,8 1150,52 1120,52 C1090,52 1085,14 1050,14 C1010,14 1000,64 965,64 C930,64 928,10 890,10 C852,10 848,58 812,58 C776,58 774,16 738,16 C700,16 695,48 660,48 C625,48 622,6 585,6 C548,6 545,44 510,44 C475,44 472,12 435,12 C398,12 393,60 358,60 C323,60 321,18 285,18 C249,18 246,50 210,50 C174,50 172,8 135,8 C98,8 95,46 60,46 C40,46 20,20 0,20 Z"/></svg>
+</div>
+
+<!-- 02 — FORM -->
+<section id="form" class="section form-section">
+  <div class="section-grid">
+    <div class="form-media reveal" data-reveal>
+      <video
+        class="form-video"
+        muted
+        playsinline
+        preload="metadata"
+        poster="hero.png"
+        aria-label="Kenn Brand bottle standing in a swirl of dark and milk chocolate, close macro angle"
+      >
+        <source src="kennbrand.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <span class="media-tag">360° MOTION STUDY</span>
+    </div>
+    <div class="form-copy">
+      <p class="eyebrow reveal" data-reveal>02 — Form</p>
+      <h2 class="section-title reveal" data-reveal>Crafted<br>to be held.</h2>
+      <p class="lead reveal" data-reveal>A seamless cylindrical form, weight-balanced for a premium pour. The Kenn bottle disappears — so the chocolate doesn't.</p>
+
+      <dl class="spec-list">
+        <div class="spec-row reveal" data-reveal>
+          <dt>400ML</dt>
+          <dd>Single-origin batch volume, chilled chain preserved</dd>
+        </div>
+        <div class="spec-row reveal" data-reveal>
+          <dt>MATTE&nbsp;LABEL</dt>
+          <dd>Soft-touch, scuff resistant with foil emboss</dd>
+        </div>
+        <div class="spec-row reveal" data-reveal>
+          <dt>CURVE</dt>
+          <dd>15° shoulder for controlled aeration on pour</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<div class="drip drip-flip" aria-hidden="true">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none"><path d="M0,0 H1200 V8 C1160,8 1150,52 1120,52 C1090,52 1085,14 1050,14 C1010,14 1000,64 965,64 C930,64 928,10 890,10 C852,10 848,58 812,58 C776,58 774,16 738,16 C700,16 695,48 660,48 C625,48 622,6 585,6 C548,6 545,44 510,44 C475,44 472,12 435,12 C398,12 393,60 358,60 C323,60 321,18 285,18 C249,18 246,50 210,50 C174,50 172,8 135,8 C98,8 95,46 60,46 C40,46 20,20 0,20 Z"/></svg>
+</div>
+
+<!-- TASTE -->
+<section id="taste" class="section taste-section">
+  <p class="eyebrow mono-eyebrow reveal" data-reveal>Macro Study — 100mm · f/1.4 · 120fps — Texture, Viscosity, Light</p>
+  <h2 class="section-title center reveal" data-reveal>Taste,<br>magnified.</h2>
+
+  <div class="taste-grid">
+    <div class="taste-card reveal" data-reveal>
+      <span class="taste-index">01</span>
+      <h3>Rich</h3>
+      <p>70% single-origin cacao mass slow-melted into milk cream.</p>
+    </div>
+    <div class="taste-card reveal" data-reveal>
+      <span class="taste-index">02</span>
+      <h3>Creamy</h3>
+      <p>Micro-aerated dairy silk. No separation, no chalk.</p>
+    </div>
+    <div class="taste-card reveal" data-reveal>
+      <span class="taste-index">03</span>
+      <h3>Real Cacao</h3>
+      <p>Stone-ground nibs, not powder. You taste the grind.</p>
+    </div>
+  </div>
+</section>
+
+<div class="drip" aria-hidden="true">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none"><path d="M0,0 H1200 V8 C1160,8 1150,52 1120,52 C1090,52 1085,14 1050,14 C1010,14 1000,64 965,64 C930,64 928,10 890,10 C852,10 848,58 812,58 C776,58 774,16 738,16 C700,16 695,48 660,48 C625,48 622,6 585,6 C548,6 545,44 510,44 C475,44 472,12 435,12 C398,12 393,60 358,60 C323,60 321,18 285,18 C249,18 246,50 210,50 C174,50 172,8 135,8 C98,8 95,46 60,46 C40,46 20,20 0,20 Z"/></svg>
+</div>
+
+<!-- 03 — ORIGIN -->
+<section id="origin" class="section origin-section">
+  <p class="eyebrow reveal" data-reveal>03 — Origin</p>
+  <h2 class="section-title reveal" data-reveal>Nothing<br>to hide.</h2>
+
+  <div class="origin-grid">
+    <div class="origin-card reveal" data-reveal>
+      <h3>Made with real cacao</h3>
+      <p>Philippine-grown cacao beans, fermented six days, roasted low and slow. We use the nib, not just the butter.</p>
+    </div>
+    <div class="origin-card reveal" data-reveal>
+      <h3>No artificial flavors</h3>
+      <p>Milk, cacao, muscovado, a pinch of sea salt. That's the ingredient list. Everything else is technique.</p>
+    </div>
+  </div>
+
+  <div class="tasting-strip reveal" data-reveal>
+    <span>Tasting</span>
+    <span class="tasting-note">Dark Cherry</span>
+    <span class="dot">•</span>
+    <span class="tasting-note">Brown Butter</span>
+    <span class="dot">•</span>
+    <span class="tasting-note">Molasses</span>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="final-hero">
+  <div class="final-bg">
+    <img src="hero.png" alt="Kenn Brand Choco na Gatas bottle, final hero frame">
+  </div>
+  <div class="final-scrim"></div>
+
+  <div class="final-content">
+    <p class="eyebrow reveal" data-reveal>Final Frame — Hero Shot</p>
+    <h2 class="final-title reveal" data-reveal>Choco<br>na Gatas</h2>
+    <p class="final-tagline reveal" data-reveal>The chocolate milk that doesn't taste like chocolate milk.<br>It tastes like chocolate.</p>
+
+    <div class="badge-row reveal" data-reveal>
+      <span>400ML</span><span class="dot">•</span><span>COLD CHAIN</span><span class="dot">•</span><span>14 DAY FRESH</span>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-brand">KENN BRAND</div>
+  <div class="footer-loc">Barotac Viejo, Iloilo &nbsp;·&nbsp; Small batch chocolate</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My World Explorer — Manila, Iloilo & Tokyo</title>
+  <meta name="description" content="A visual journey through the streets, heritage, landscapes, and everyday stories of Manila, Iloilo, and Tokyo." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="home">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-main">MY WORLD</span>
+        <span class="logo-sub">EXPLORER</span>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#destinations">DESTINATIONS</a></li>
+          <li><a href="#journal">JOURNAL</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" aria-label="Hero">
+      <div class="hero-content">
+        <span class="hero-label">TRAVEL JOURNAL </span>
+        <h1 class="hero-title">MY WORLD<br />EXPLORER</h1>
+        <p class="hero-desc">A visual journey through the streets, heritage, landscapes, and everyday stories of Manila, Iloilo, and Tokyo.</p>
+        <div class="hero-meta">
+          <span>3 DESTINATIONS</span>
+          <span>2 COUNTRIES</span>
+          <span>1 JOURNEY</span>
+        </div>
+        <a href="#destinations" class="btn primary">EXPLORE THE JOURNEY</a>
+      </div>
+      <figure class="hero-figure">
+        <img src="Images/Manila_Bay2.webp" alt="Manila Bay sunset" loading="lazy" />
+        <figcaption>Manila Bay — sunset over the historic harbour</figcaption>
+      </figure>
+    </section>
+
+
+    <section class="intro-section" aria-label="Introduction">
+      <div class="container narrow">
+        <p class="intro-kicker">Three cities. Two countries. Different histories, cultures, and rhythms.</p>
+        <p class="intro-text">This visual journal explores <strong>Manila</strong>, <strong>Iloilo</strong>, and <strong>Tokyo</strong> through places, people, architecture, food, and everyday life. Each destination tells its own story — from colonial walls to riverside heritage, from neon-lit crossings to ancient temples.</p>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS INDEX -->
+    <section class="destinations-index" id="destinations" aria-label="Destinations">
+      <div class="container">
+        <h2 class="section-title">DESTINATIONS</h2>
+        <!-- MANILA CARD -->
+        <article class="dest-card">
+          <div class="dest-image">
+            <img src="Images/Manila.jpg" alt="Intramuros, Manila" loading="lazy" />
+          </div>
+          <div class="dest-text">
+            <span class="dest-number">01</span>
+            <h3 class="dest-name">MANILA</h3>
+            <span class="dest-country">PHILIPPINES</span>
+            <span class="dest-tags">URBAN / HISTORY / ARCHITECTURE</span>
+            <p class="dest-preview">Intramuros, Fort Santiago, Rizal Park, and the bay — layers of colonial and contemporary life.</p>
+            <a href="#manila" class="btn outline">EXPLORE MANILA</a>
+          </div>
+        </article>
+        <!-- ILOILO CARD -->
+        <article class="dest-card reverse">
+          <div class="dest-image">
+            <img src="Images/Iloilo.jpg" alt="Iloilo City" loading="lazy" />
+          </div>
+          <div class="dest-text">
+            <span class="dest-number">02</span>
+            <h3 class="dest-name">ILOILO</h3>
+            <span class="dest-country">PHILIPPINES</span>
+            <span class="dest-tags">HERITAGE / CULTURE / FOOD</span>
+            <p class="dest-preview">Heritage mansions, river esplanade, La Paz Batchoy, and the Dinagyang spirit.</p>
+            <a href="#iloilo" class="btn outline">EXPLORE ILOILO</a>
+          </div>
+        </article>
+        <!-- TOKYO CARD -->
+        <article class="dest-card">
+          <div class="dest-image">
+            <img src="Images/Tokyo.jpg" alt="Tokyo cityscape" loading="lazy" />
+          </div>
+          <div class="dest-text">
+            <span class="dest-number">03</span>
+            <h3 class="dest-name">TOKYO</h3>
+            <span class="dest-country">JAPAN</span>
+            <span class="dest-tags">MODERN / TRADITION / URBAN LIFE</span>
+            <p class="dest-preview">Shibuya, Senso-ji, Meiji Jingu — where tradition meets the future.</p>
+            <a href="#tokyo" class="btn outline">EXPLORE TOKYO</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MANILA -->
+    <section class="city-section" id="manila" aria-label="Manila">
+      <div class="container">
+        <header class="city-header">
+          <span class="city-label">URBAN / HISTORY / ARCHITECTURE</span>
+          <h2 class="city-name">MANILA</h2>
+          <span class="city-country">PHILIPPINES</span>
+        </header>
+        <div class="city-grid">
+          <figure class="city-feature">
+            <img src="Images/Portsantiago2.jpg" alt="Fort Santiago" loading="lazy" />
+            <figcaption>Fort Santiago — Intramuros, Manila</figcaption>
+          </figure>
+          <div class="city-content">
+            <h3>FORT SANTIAGO</h3>
+            <p><strong>Historical context:</strong> Fort Santiago is a 16th-century citadel built by the Spanish. It served as a defensive fortress and later as a prison. It is closely linked to the Philippine national hero José Rizal, who was detained here before his execution.</p>
+            <p><strong>What to notice:</strong> The stone walls, the Rizal Shrine, and the intricate gates that echo colonial military architecture.</p>
+            <p><strong>Why visit:</strong> It offers a tangible connection to the Philippines' colonial past and the story of its independence.</p>
+          </div>
+        </div>
+        <div class="city-grid reverse">
+          <figure class="city-feature">
+            <img src="Images/Rizal_Monument.jpg" alt="Rizal Park" loading="lazy" />
+            <figcaption>Rizal Park — central Manila</figcaption>
+          </figure>
+          <div class="city-content">
+            <h3>RIZAL PARK</h3>
+            <p><strong>Historical context:</strong> Also known as Luneta, this park is a major historical landmark where José Rizal was executed in 1896. It marks the end of Spanish colonial rule.</p>
+            <p><strong>What to notice:</strong> The Rizal Monument, the flagpole, and the surrounding gardens that serve as a public gathering space.</p>
+            <p><strong>Why visit:</strong> It is the heart of Manila's civic life and a symbol of Filipino identity.</p>
+          </div>
+        </div>
+        <figure class="city-full">
+          <img src="Images/Manila_Bay2.webp" alt="Manila Bay" loading="lazy" />
+          <figcaption>Manila Bay — famous for its golden sunsets and historic harbour</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ILOILO -->
+    <section class="city-section" id="iloilo" aria-label="Iloilo">
+      <div class="container">
+        <header class="city-header">
+          <span class="city-label">HERITAGE / CULTURE / FOOD</span>
+          <h2 class="city-name">ILOILO CITY</h2>
+          <span class="city-country">PHILIPPINES</span>
+        </header>
+        <div class="city-grid">
+          <figure class="city-feature">
+            <img src="Images/Molo_Church.png" alt="Molo Church" loading="lazy" />
+            <figcaption>Molo Church — known as the 'feminist church' for its all-female saints</figcaption>
+          </figure>
+          <div class="city-content">
+            <h3>MOLO CHURCH</h3>
+            <p><strong>Historical context:</strong> Built in the 19th century, Molo Church is a neo-Gothic structure that stands out for its all-female saints, earning it the nickname "feminist church." It reflects the strong Ilonggo heritage.</p>
+            <p><strong>What to notice:</strong> The coral stone facade, the intricate altars, and the stained glass windows.</p>
+            <p><strong>Why visit:</strong> It is a unique example of local religious architecture and devotion.</p>
+          </div>
+        </div>
+        <div class="city-grid reverse">
+          <figure class="city-feature">
+            <img src="Images/Iloilo_river.png" alt="Iloilo River Esplanade" loading="lazy" />
+            <figcaption>Iloilo River Esplanade — a modern riverside promenade</figcaption>
+          </figure>
+          <div class="city-content">
+            <h3>ILOILO RIVER ESPLANADE</h3>
+            <p><strong>Historical context:</strong> The esplanade is part of Iloilo's urban renewal, transforming the riverfront into a public space that celebrates the city's heritage and modern development.</p>
+            <p><strong>What to notice:</strong> The walkways, local sculptures, and the view of the river that has been central to Ilonggo life.</p>
+            <p><strong>Why visit:</strong> It's a peaceful place to experience the city's contemporary identity and community life.</p>
+          </div>
+        </div>
+        <figure class="city-full">
+          <img src="Images/Lapaz_Batchoy.jpg" alt="La Paz Batchoy" loading="lazy" />
+          <figcaption>La Paz Batchoy — Iloilo's legendary noodle soup, a culinary heritage</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TOKYO -->
+    <section class="city-section" id="tokyo" aria-label="Tokyo">
+      <div class="container">
+        <header class="city-header">
+          <span class="city-label">MODERN / TRADITION / URBAN LIFE</span>
+          <h2 class="city-name">TOKYO</h2>
+          <span class="city-country">JAPAN</span>
+        </header>
+        <div class="city-grid">
+          <figure class="city-feature">
+            <img src="Images/sensoji2.jpg" alt="Senso-ji Temple" loading="lazy" />
+            <figcaption>Senso-ji — Tokyo's oldest temple, Asakusa</figcaption>
+          </figure>
+          <div class="city-content">
+            <h3>SENSO-JI</h3>
+            <p><strong>Historical context:</strong> Founded in 645 AD, Senso-ji is Tokyo's oldest temple. It is dedicated to Kannon, the goddess of mercy, and has survived fires, wars, and reconstruction.</p>
+            <p><strong>What to notice:</strong> The Thunder Gate (Kaminarimon), the main hall, and the five-story pagoda.</p>
+            <p><strong>Why visit:</strong> It embodies the spiritual heart of Tokyo amidst the modern city.</p>
+          </div>
+        </div>
+        <div class="city-grid reverse">
+          <figure class="city-feature">
+            <img src="Images/shibuya3.jpg" alt="Shibuya Crossing" loading="lazy" />
+            <figcaption>Shibuya Crossing — iconic scramble intersection</figcaption>
+          </figure>
+          <div class="city-content">
+            <h3>SHIBUYA CROSSING</h3>
+            <p><strong>Historical context:</strong> Shibuya has evolved from a local railway hub to a global symbol of Tokyo's energy. The crossing represents the city's dense, organized chaos.</p>
+            <p><strong>What to notice:</strong> The synchronized pedestrian flow, neon signage, and the surrounding department stores.</p>
+            <p><strong>Why visit:</strong> It captures the pulse of contemporary Tokyo.</p>
+          </div>
+        </div>
+        <figure class="city-full">
+          <img src="Images/skytree.png" alt="Tokyo Sktree" loading="lazy" />
+          <figcaption>Tokyo Skytree — a modern architectural landmark</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="journal-section" id="journal" aria-label="Photo journal">
+      <div class="container">
+        <h2 class="section-title">PHOTO JOURNAL</h2>
+        <div class="journal-grid">
+          <figure class="journal-item large">
+            <img src="Images/Manila.jpg" alt="Manila" loading="lazy" />
+            <figcaption>Intramuros, Manila</figcaption>
+          </figure>
+          <figure class="journal-item">
+            <img src="Images/Iloilo.jpg" alt="Iloilo" loading="lazy" />
+            <figcaption>Molo Church, Iloilo</figcaption>
+          </figure>
+          <figure class="journal-item">
+            <img src="Images/Tokyo.jpg" alt="Tokyo" loading="lazy" />
+            <figcaption>Senso-ji, Tokyo</figcaption>
+          </figure>
+          <figure class="journal-item wide">
+            <img src="Images/Manilabay.webp" alt="Manila Bay" loading="lazy" />
+            <figcaption>Manila Bay</figcaption>
+          </figure>
+          <figure class="journal-item">
+            <img src="Images/Iloilo_river.png" alt="Iloilo River" loading="lazy" />
+            <figcaption>Iloilo River Esplanade</figcaption>
+          </figure>
+          <figure class="journal-item">
+            <img src="Images/shibuya3.jpg" alt="Shibuya Crossing" loading="lazy" />
+            <figcaption>Shibuya Crossing</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="about-section" id="about" aria-label="About">
+      <div class="container narrow">
+        <h2 class="section-title">ABOUT THE JOURNEY</h2>
+        <p><strong>My World Explorer</strong> is a visual travel journal exploring three destinations across the Philippines and Japan. Manila was chosen for its layered history and urban energy; Iloilo for its heritage and warm culture; Tokyo for its dynamic contrast between tradition and modernity. Each city offers a unique lens on architecture, food, and everyday life.</p>
+        <p>This project celebrates the diversity of cities — from colonial walls to riverside promenades, from temple gates to neon crossings. It is a journey through real places, real stories, and real cultures.</p>
+      </div>
+    </section>
+
+
+    <section class="contact-section" id="contact" aria-label="Contact">
+      <div class="container narrow">
+        <h2 class="section-title">CONTACT</h2>
+        <form id="contactForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn primary">Send Message</button>
+          <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-main">MY WORLD</span>
+        <span class="logo-sub">EXPLORER</span>
+        <span class="footer-tagline">MANILA • ILOILO • TOKYO</span>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#destinations">DESTINATIONS</a></li>
+          <li><a href="#journal">JOURNAL</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="footer-copy">
+        <p>&copy; <span id="year"></span> My World Explorer</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+    <figure class="lightbox-content">
+      <img src="" alt="" id="lightboxImg" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+  </div>
+
+  <script>
+    (function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.primary-nav');
+      const navLinks = nav.querySelectorAll('a');
+
+      toggle.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+        this.setAttribute('aria-expanded', expanded);
+        nav.classList.toggle('open');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // LIGHTBOX
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const closeBtn = document.querySelector('.lightbox-close');
+
+      document.querySelectorAll('.journal-item img, .city-feature img, .city-full img, .dest-image img').forEach(img => {
+        img.addEventListener('click', function(e) {
+          e.stopPropagation();
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt;
+          const figcaption = this.closest('figure')?.querySelector('figcaption');
+          lightboxCaption.textContent = figcaption ? figcaption.textContent : '';
+          lightbox.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+
+      const form = document.getElementById('contactForm');
+      const feedback = document.getElementById('formFeedback');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+          feedback.textContent = 'Please fill in all required fields.';
+          feedback.style.color = '#b33';
+          return;
+        }
+        if (!email.includes('@') || !email.includes('.')) {
+          feedback.textContent = 'Please enter a valid email address.';
+          feedback.style.color = '#b33';
+          return;
+        }
+        feedback.textContent = 'Thank you. Your message has been received.';
+        feedback.style.color = '#1a7a5a';
+        form.reset();
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

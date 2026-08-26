@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Kenn Daniel B. De Los Santos</title>
+
+  <!-- ===== EXTERNAL CSS ===== -->
+  <link rel="stylesheet" href="about.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ========== SCROLL PROGRESS ========== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ========== SKIP LINK ========== -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner" id="navbarInner">
+      <a href="../portfolio/index.html" class="logo" id="logoLink">
+        <img src="../portfolio/assets/logo-full.png" alt="KennDev." class="logo-full logo-full--light" />
+        <img src="../portfolio/assets/logo-full-dark.png" alt="KennDev." class="logo-full logo-full--dark" />
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="../portfolio/index.html#hero" class="nav-link">Home</a>
+        <a href="../portfolio/index.html#projects" class="nav-link">Project</a>
+    
+       
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../portfolio/index.html#contact" class="say-hi-btn">Say Hi 👋</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="index.html#projects" class="mobile-link">Project</a>
+      <a href="index.html#skills" class="mobile-link">Skills</a>
+      <a href="index.html#experience" class="mobile-link">Experience</a>
+      <a href="index.html#contact" class="mobile-say-hi">Say Hi 👋</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ABOUT PAGE CONTENT
+       ============================================================ -->
+  <main class="about-page" id="main">
+
+    <!-- ===== HERO / ABOUT HEADER ===== -->
+    <section class="about-hero">
+      <div class="about-hero__inner">
+        <div class="about-hero__grid">
+          <div class="about-hero__left">
+            <div class="profile-photo">
+              <img src="Images/kenn.jpg" alt="Kenn Daniel B. De Los Santos" />
+            </div>
+            <p class="profile-caption">Kenn Daniel B. De Los Santos</p>
+          </div>
+
+          <div class="about-hero__right">
+            <h1 class="about-hero__title">Who I Am</h1>
+
+            <p class="about-hero__paragraph">
+              I am Kenn Daniel B. De Los Santos, a Bachelor of Science in Information Technology graduate from Iloilo State University of Fisheries Science and Technology (ISUFST). I have a genuine passion for building software that solves real problems.
+            </p>
+
+            <p class="about-hero__paragraph">
+              During my OJT at EMB DENR Region 6, I had the opportunity to design and develop a full-stack Fields Monitoring System — both as a mobile and web application — used by the agency to track new building branches and generate formatted reports. That experience taught me how to ship production-grade software under real deadlines.
+            </p>
+
+            <p class="about-hero__paragraph">
+              I am actively seeking my first full-time role in IT or software development where I can grow my skills, contribute to a team, and continue building things that matter.
+            </p>
+
+            <p class="about-hero__status">
+              <i class="fas fa-bolt" style="color:var(--accent);margin-right:0.5rem;"></i>
+              Currently Open to full-time job opportunities in web, mobile, or desktop development
+            </p>
+
+            <div class="about-hero__cta">
+              <a href="../portfolio/index.html#contact" class="cta-link cta-link--primary">Let's work together <span aria-hidden="true">→</span></a>
+              <a href="../portfolio/assets/Document/KennDaniel_Resume.pdf" class="cta-link cta-link--secondary" download>Download Resume <i class="fas fa-arrow-down-long"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OJT EXPERIENCE GALLERY ===== -->
+    <section class="section gallery-section">
+      <div class="section__inner">
+        <h2 class="section-title"><i class="fas fa-images"></i> OJT Experience &amp; Projects</h2>
+      </div>
+
+      <div class="gallery-wrapper" id="galleryWrapper" role="group" aria-roledescription="carousel" aria-label="OJT experience and projects, playing automatically">
+        <div class="gallery-stage" id="galleryStage"></div>
+        <div class="gallery-nav-dots" id="galleryDots"></div>
+      </div>
+    </section>
+
+    <!-- ===== HOW I BUILD APPLICATIONS ===== -->
+    <section class="section article-section" id="how-i-build">
+      <div class="article-shell">
+
+        <header class="article-header">
+          <span class="article-label">My Development Approach</span>
+          <h2 class="article-title">How I Build Applications</h2>
+          <p class="article-subtitle">From an idea to a working application — combining programming, design, research, clean architecture, and AI-assisted development.</p>
+          <div class="article-meta">
+            <span>Research</span><span class="meta-dot">•</span><span>Personal Projects</span><span class="meta-dot">•</span><span>Client Projects</span>
+          </div>
+        </header>
+        <div class="article-divider"></div>
+
+        <div class="article-layout">
+
+          <!-- ===== STICKY CHAPTER NAV ===== -->
+          <nav class="chapter-nav" id="chapterNav" aria-label="Article chapters">
+            <div class="chapter-rail"><span class="chapter-rail__fill" id="chapterRailFill"></span></div>
+            <ol class="chapter-list">
+              <li><a href="#ch-01" data-chapter="ch-01"><span class="chapter-num">01</span><span class="chapter-label-text">My Approach</span></a></li>
+              <li><a href="#ch-02" data-chapter="ch-02"><span class="chapter-num">02</span><span class="chapter-label-text">AI-Assisted Dev</span></a></li>
+              <li><a href="#ch-03" data-chapter="ch-03"><span class="chapter-num">03</span><span class="chapter-label-text">Think First</span></a></li>
+              <li><a href="#ch-04" data-chapter="ch-04"><span class="chapter-num">04</span><span class="chapter-label-text">Design First</span></a></li>
+              <li><a href="#ch-05" data-chapter="ch-05"><span class="chapter-num">05</span><span class="chapter-label-text">Architecture</span></a></li>
+              <li><a href="#ch-06" data-chapter="ch-06"><span class="chapter-num">06</span><span class="chapter-label-text">Reviewing AI Code</span></a></li>
+              <li><a href="#ch-07" data-chapter="ch-07"><span class="chapter-num">07</span><span class="chapter-label-text">Testing</span></a></li>
+              <li><a href="#ch-08" data-chapter="ch-08"><span class="chapter-num">08</span><span class="chapter-label-text">What I Learn</span></a></li>
+            </ol>
+          </nav>
+
+          <!-- ===== ARTICLE CONTENT ===== -->
+          <div class="article-content">
+
+            <!-- 01 — MY APPROACH -->
+            <article class="chapter" id="ch-01">
+              <span class="chapter-eyebrow">01</span>
+              <h3 class="chapter-title">I Don't Build Alone — I Build With the Right Tools</h3>
+              <p class="chapter-lede">I'm not a developer who writes every line from scratch. I turn ideas into working applications by combining <strong>programming knowledge</strong>, <strong>problem-solving</strong>, <strong>research</strong>, <strong>design</strong>, and modern <strong>AI-assisted development</strong>.</p>
+              <p>Before I write a single line of code, I try to understand the problem, study how similar systems work, and spend time designing and refining the concept in Figma. Good development starts before development starts.</p>
+              <aside class="side-card">
+                <span class="side-card__label">The Goal</span>
+                <p>Turn ideas and problems into useful, maintainable applications.</p>
+              </aside>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 02 — AI-ASSISTED DEVELOPMENT -->
+            <article class="chapter" id="ch-02">
+              <span class="chapter-eyebrow">02</span>
+              <h3 class="chapter-title">AI Is a Tool. Understanding Is My Responsibility.</h3>
+              <div class="tool-badges">
+                <span class="tool-badge">ChatGPT</span>
+                <span class="tool-badge">Claude</span>
+                <span class="tool-badge">DeepSeek</span>
+                <span class="tool-badge">GitHub Copilot</span>
+              </div>
+              <p>I use these tools to explore ideas, understand unfamiliar technologies, generate implementations, troubleshoot problems, and speed up repetitive work — they help me move faster, they don't decide what ships.</p>
+              <p>Every generated output goes through the same routine: I review it, understand the implementation, test it, adapt it to the project, and decide whether it's actually appropriate. If it isn't, I rewrite it.</p>
+              <blockquote class="pull-quote">AI can generate code.<br>I am responsible for understanding what that code does.</blockquote>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 03 — THINK BEFORE I CODE -->
+            <article class="chapter" id="ch-03">
+              <span class="chapter-eyebrow">03</span>
+              <h3 class="chapter-title">Every Application Starts With a Problem</h3>
+              <p class="chapter-lede">Before any code gets written, I work through five questions, in order.</p>
+              <ol class="process-steps">
+                <li><span class="process-num">01</span><div><h4>Understand</h4><p>What problem am I solving?</p></div></li>
+                <li><span class="process-num">02</span><div><h4>Research</h4><p>What technologies and approaches could solve it?</p></div></li>
+                <li><span class="process-num">03</span><div><h4>Design</h4><p>What should the user experience?</p></div></li>
+                <li><span class="process-num">04</span><div><h4>Plan</h4><p>How should the application be structured?</p></div></li>
+                <li><span class="process-num">05</span><div><h4>Build</h4><p>How should the solution be implemented?</p></div></li>
+              </ol>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 04 — DESIGN BEFORE DEVELOPMENT -->
+            <article class="chapter" id="ch-04">
+              <span class="chapter-eyebrow">04</span>
+              <h3 class="chapter-title">I Design the Experience Before I Build the System</h3>
+              <div class="split-layout">
+                <div class="split-text">
+                  <p>Every project starts in Figma, not in an editor. I sketch layouts, map the user flow, and go through several rough passes before anything is considered final. Design isn't a step I skip to save time — it's what keeps the application usable once it's built.</p>
+                  <p>I revisit the same screens repeatedly, questioning spacing, hierarchy, and flow until the interface feels obvious to use.</p>
+                  <span class="split-caption">Explore <span class="arrow">→</span> Refine <span class="arrow">→</span> Validate <span class="arrow">→</span> Build</span>
+                </div>
+                <div class="split-visual" aria-hidden="true">
+                  <div class="wire-stack">
+                    <div class="wire-frame wire-frame--rough">
+                      <span class="wire-line wire-line--sm"></span>
+                      <span class="wire-line"></span>
+                      <span class="wire-box"></span>
+                    </div>
+                    <div class="wire-frame wire-frame--mid">
+                      <span class="wire-line wire-line--sm"></span>
+                      <span class="wire-line"></span>
+                      <span class="wire-box wire-box--split"></span>
+                    </div>
+                    <div class="wire-frame wire-frame--final">
+                      <span class="wire-line wire-line--accent"></span>
+                      <span class="wire-line wire-line--sm"></span>
+                      <span class="wire-box wire-box--accent"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 05 — CLEAN CODE & ARCHITECTURE -->
+            <article class="chapter" id="ch-05">
+              <span class="chapter-eyebrow">05</span>
+              <h3 class="chapter-title">Working Code Is Not Always Good Code</h3>
+              <p>School is where I first learned that architecture matters as much as logic. I separate responsibilities instead of putting everything in one file — <strong>MVC</strong>, a <strong>service layer</strong>, a <strong>DAO</strong>, clear <strong>separation of concerns</strong>, and <strong>reusable components</strong>.</p>
+
+              <div class="arch-diagram">
+                <div class="arch-node">User Interface</div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">Controller</div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">Service</div>
+                <div class="arch-connector"></div>
+                <div class="arch-node">DAO / Data Access</div>
+                <div class="arch-connector"></div>
+                <div class="arch-node arch-node--end">Database / API</div>
+              </div>
+
+              <p>The goal was never more files — it's giving each part of the system a clear responsibility, so any piece can change without breaking the rest.</p>
+              <blockquote class="pull-quote pull-quote--left">If a project becomes difficult to understand, I look for ways to simplify its structure.</blockquote>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 06 — REVIEWING AI-GENERATED CODE -->
+            <article class="chapter" id="ch-06">
+              <span class="chapter-eyebrow">06</span>
+              <h3 class="chapter-title">Generate Less. Understand More.</h3>
+              <p>AI-generated code gets reviewed and adapted, never copied in blindly. Here's an actual example from a form-submission handler an AI assistant produced:</p>
+
+              <div class="compare-cards">
+                <div class="compare-card compare-card--before">
+                  <span class="compare-card__label">AI Output</span>
+                  <div class="compare-card__block">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <ul class="compare-card__tags">
+                    <li>Too much</li>
+                    <li>Repeated logic</li>
+                    <li>Unclear responsibility</li>
+                  </ul>
+                </div>
+                <div class="compare-arrow">Review <span class="arrow">→</span> Understand <span class="arrow">→</span> Refactor <span class="arrow">→</span> Simplify</div>
+                <div class="compare-card compare-card--after">
+                  <span class="compare-card__label">My Refactor</span>
+                  <ul class="compare-card__parts">
+                    <li>Components</li>
+                    <li>Services</li>
+                    <li>DAO</li>
+                    <li>Models</li>
+                    <li>Utilities</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="diff-panel">
+                <div class="diff-panel__header">
+                  <span class="diff-panel__file"><i class="fas fa-file-code"></i> submit-form.js — after review</span>
+                  <span class="diff-panel__badge">− 1,746 lines</span>
+                </div>
+                <div class="diff-panel__spacer"></div>
+                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>class UserFormSubmissionValidationHandlerServiceFactory {</div>
+                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>&nbsp;&nbsp;constructor(deps) { this.deps = deps; /* 40 more lines */ }</div>
+                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>&nbsp;&nbsp;validateAndProcessAndLogAndRetryAsync(data) { ... }</div>
+                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>}</div>
+                <div class="diff-line diff-line--context">&nbsp;</div>
+                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>function submitForm(data) {</div>
+                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>&nbsp;&nbsp;if (!isValid(data)) return showError();</div>
+                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>&nbsp;&nbsp;api.save(data);</div>
+                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>}</div>
+                <div class="diff-panel__spacer"></div>
+              </div>
+
+              <div class="diff-stat">
+                <span class="diff-stat__num diff-stat__num--before">1,842</span>
+                <span class="diff-stat__arrow">→</span>
+                <span class="diff-stat__num diff-stat__num--after">96</span>
+                <span class="diff-stat__label">lines generated vs. lines actually shipped, illustrative example</span>
+              </div>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 07 — TESTING & IMPROVEMENT -->
+            <article class="chapter" id="ch-07">
+              <span class="chapter-eyebrow">07</span>
+              <h3 class="chapter-title">If It Works, I Still Ask: Can It Be Better?</h3>
+              <ul class="check-list">
+                <li><i class="fas fa-check"></i> Does it solve the actual problem?</li>
+                <li><i class="fas fa-check"></i> Is the implementation correct?</li>
+                <li><i class="fas fa-check"></i> Is the architecture understandable?</li>
+                <li><i class="fas fa-check"></i> Is unnecessary code removed?</li>
+                <li><i class="fas fa-check"></i> Can another developer maintain it?</li>
+                <li><i class="fas fa-check"></i> Does the application provide a good user experience?</li>
+              </ul>
+            </article>
+
+            <div class="chapter-divider"></div>
+
+            <!-- 08 — EVERY PROJECT TEACHES ME SOMETHING -->
+            <article class="chapter" id="ch-08">
+              <span class="chapter-eyebrow">08</span>
+              <h3 class="chapter-title">More Projects. More Problems. More Learning.</h3>
+              <p class="big-statement">I don't expect every project to be perfect.<br>I expect every project to teach me something.</p>
+              <p>Every project introduces something new — a technology, a problem, an architecture, a design challenge, a habit worth keeping or dropping.</p>
+              <div class="progression">
+                <span>Idea</span><span class="arrow">→</span><span>Research</span><span class="arrow">→</span><span>Design</span><span class="arrow">→</span><span>Develop</span><span class="arrow">→</span><span>Test</span><span class="arrow">→</span><span>Improve</span><span class="arrow">→</span><span>Learn</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ===== WHERE I'M STILL GROWING ===== -->
+        <div class="growth-card">
+          <span class="growth-card__label">Where I'm Still Growing</span>
+          <p>Designing layouts around what users actually want is my biggest challenge — I tend to overthink it. I also know there's tech I haven't touched yet, but I'm ready to learn and adapt fast.</p>
+        </div>
+
+        <!-- ===== CLOSING ===== -->
+        <div class="article-closing">
+          <p class="closing-statement">My goal isn't to know everything.</p>
+          <p class="closing-statement closing-statement--muted">My goal is to know how to learn, adapt, build, and solve problems.</p>
+          <div class="closing-signature">
+            <span class="closing-signature__name">— Kenn Daniel</span>
+            <span class="closing-signature__role">Junior Developer</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== ADDITIONAL EXPERIENCE ===== -->
+    <section class="section additional-section">
+      <div class="section__inner">
+        <h2 class="section-title"><i class="fas fa-list-ul"></i> Additional Experience</h2>
+        <div class="additional-card">
+          <p>
+            Outside of my IT experience, I have worked in different environments that helped develop my
+            <span class="highlight">discipline</span>, <span class="highlight">adaptability</span>,
+            <span class="highlight">teamwork</span>, and <span class="highlight">responsibility</span>.
+            I currently assist in a car painting shop, helping painters prepare and finish units, including
+            clear-coat polishing. I have also worked as a cleaner and dishwasher in a local restaurant and
+            have participated in corn planting and harvesting. These experiences taught me the importance of
+            hard work, <span class="highlight">attention to detail</span>, teamwork, following instructions,
+            and completing responsibilities properly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <a href="../portfolio/index.html" class="footer__logo">
+          <img src="../portfolio/assets/logo-full.png" alt="KennDev" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">Building software that solves real problems.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+   
+        <a href="../portfolio/index.html#projects">Projects</a>
+        <a href="../portfolio/index.html#contact">Contact</a>
+        <a href="../portfolio/index.html#experience">Experience</a>
+      </nav>
+
+      <div class="footer__right">
+        <div class="footer__social">
+          <a href="https://web.facebook.com/" aria-label="Facebook" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://mail.google.com/mail/u/0/#inbox" aria-label="Gmail" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-1.023.733-1.855 1.636-1.855h.012L12 10.182 22.352 3.602h.012C23.267 3.602 24 4.434 24 5.457z"/>
+            </svg>
+          </a>
+        </div>
+        <p class="footer__copy">© 2026 KennPortfolio</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== EXTERNAL JAVASCRIPT ===== -->
+  <script src="about.js"></script>
+</body>
+</html>
