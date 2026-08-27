@@ -1,0 +1,54 @@
+/* ============================================================
+   Fonts & Typography
+   ============================================================ */
+/* ---------- Geist (self-hosted) ---------- */
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist';
+  src: url('../assets/fonts/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Section Typography */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section__title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--c-primary-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+
+.section__subtitle {
+  font-size: 0.95rem;
+  color: var(--c-muted);
+  margin-top: -36px;
+  margin-bottom: 40px;
+  max-width: 46ch;
+  margin-left: auto;
+  margin-right: auto;
+}

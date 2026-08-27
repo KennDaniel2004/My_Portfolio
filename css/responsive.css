@@ -1,0 +1,698 @@
+/* ============================================================
+   RESPONSIVE STYLES - All screen sizes
+   ============================================================ */
+
+/* ============================================================
+   TABLET & SMALLER (1024px and below)
+   ============================================================ */
+@media (max-width: 1024px) {
+  /* Layout */
+  .section { padding: 70px 0; }
+  .section__title { 
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem); 
+    margin-bottom: 36px; 
+  }
+  
+  /* Hero */
+  .hero__inner { padding: 60px 24px 60px; }
+  .hero__name { font-size: clamp(3rem, 8vw, 4.5rem); }
+  .hero__desc { 
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem); 
+    max-width: 90%; 
+  }
+  
+  /* About */
+  .about-lead { margin-bottom: 72px; }
+  .about-lead__grid { 
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+  }
+  .about-lead__intro { max-width: 100%; }
+  .about-lead__side { padding-top: 0; }
+  .about-lead__statement { max-width: 100%; }
+  .about-lead__cards { max-width: 420px; }
+
+  /* Projects */
+  .projects__grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+  }
+  
+  /* Skills */
+  .skills__grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 18px; 
+  }
+  
+  /* Experience */
+  .experience__grid { 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+  }
+  .experience__side { 
+    flex-direction: row; 
+    gap: 20px; 
+  }
+  .experience__side .xp-card { flex: 1; }
+  
+  /* Contact */
+  .contact__wrapper { 
+    grid-template-columns: 1fr; 
+    gap: 32px; 
+    max-width: 640px; 
+  }
+  
+  /* Footer */
+  .footer__inner { gap: 20px 30px; }
+  .footer__nav { gap: 20px; }
+}
+
+/* ============================================================
+   MOBILE (768px and below)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Layout */
+  .section { padding: 56px 0; }
+  .section__inner, .footer__inner { padding: 0 20px; }
+  .section__title { 
+    font-size: clamp(1.4rem, 4vw, 1.8rem); 
+    margin-bottom: 28px; 
+  }
+  .eyebrow { 
+    font-size: 0.65rem; 
+    margin-bottom: 8px; 
+  }
+  
+  /* ===== HERO ===== */
+  .hero { 
+    min-height: 100vh; 
+    min-height: max(100vh, 600px); 
+  }
+  .hero__inner { 
+    padding: 50px 20px 48px; 
+    display: flex; 
+    align-items: flex-end; 
+    min-height: 100vh; 
+  }
+  .hero__scrim { 
+    background: linear-gradient(to top, 
+      rgba(44,62,80,0.95) 0%, 
+      rgba(44,62,80,0.85) 38%, 
+      rgba(44,62,80,0.35) 65%, 
+      rgba(44,62,80,0.15) 100%
+    ); 
+  }
+  .hero__content { 
+    max-width: 100%; 
+    padding-bottom: 10px; 
+  }
+  .hero__greeting { 
+    font-size: clamp(0.85rem, 2vw, 1rem); 
+    line-height: 2.5; 
+    transform: translate(0, 0); 
+  }
+  .hero__name { 
+    font-size: clamp(2.4rem, 10vw, 3.5rem); 
+    white-space: normal; 
+  }
+  .hero__title { 
+    font-size: clamp(1rem, 2.5vw, 1.3rem); 
+    margin: -2px 0 18px 0; 
+  }
+  .hero__desc { 
+    font-size: clamp(0.88rem, 2vw, 0.95rem); 
+    max-width: 100%; 
+    margin-bottom: 20px; 
+    line-height: 1.6; 
+  }
+  .hero__actions { 
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 10px; 
+    width: 100%; 
+  }
+  .hero__actions .btn { 
+    justify-content: center; 
+    padding: 14px 20px; 
+    width: 100%; 
+    font-size: 0.85rem; 
+    min-width: 100%; 
+  }
+  .hero__actions .btn--with-icon { padding: 14px 20px; }
+  .hero__actions .btn-icon svg { width: 18px; height: 18px; }
+  .hero__scroll-cue { 
+    bottom: 16px; 
+    width: 20px; 
+    height: 32px; 
+    padding-top: 5px; 
+  }
+  .hero__scroll-cue span { 
+    width: 2.5px; 
+    height: 7px; 
+  }
+
+  /* ===== ABOUT ===== */
+  .about-lead { margin-bottom: 56px; }
+  .about-lead__eyebrow { 
+    font-size: 0.66rem; 
+    margin-bottom: 16px; 
+  }
+  .about-lead__paragraph { 
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem); 
+    line-height: 1.6; 
+  }
+  .about-lead__statement { 
+    font-size: 0.9rem; 
+    line-height: 1.6; 
+  }
+  .about-lead__cards { max-width: 100%; }
+
+  /* ===== PROJECTS ===== */
+  .projects__heading { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 14px; 
+    padding-bottom: 20px; 
+  }
+  .projects__subtitle { 
+    text-align: center; 
+    max-width: 100%; 
+    padding-top: 0; 
+  }
+  .projects__grid { 
+    grid-template-columns: 1fr; 
+    gap: 18px; 
+  }
+  .project-card__body { padding: 18px; }
+  .project-card__title { font-size: 1rem; }
+  .project-card__desc { font-size: 0.82rem; }
+  .project-card__tech li { 
+    font-size: 0.6rem; 
+    padding: 2px 8px; 
+  }
+  .link-btn { 
+    font-size: 0.75rem; 
+    padding: 6px 12px; 
+  }
+
+  /* ===== SKILLS ===== */
+  .skills__grid { 
+    grid-template-columns: 1fr; 
+    gap: 14px; 
+  }
+  .skill-group { 
+    padding: 22px 20px; 
+  }
+  .skill-group__head { 
+    gap: 10px; 
+    margin-bottom: 16px; 
+  }
+  .skill-group__icon { 
+    width: 34px; 
+    height: 34px; 
+  }
+  .skill-group__title { font-size: 0.95rem; }
+  .skill-tags { gap: 8px; }
+  .skill-tags li { 
+    font-size: 0.78rem; 
+    padding: 6px 12px; 
+  }
+  .skills__subtitle { 
+    font-size: 0.9rem; 
+    margin: -20px auto 32px; 
+    padding: 0 12px; 
+  }
+
+  /* ===== EXPERIENCE ===== */
+  .experience__grid { 
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+  }
+  .experience__side { 
+    flex-direction: column; 
+    gap: 16px; 
+  }
+  .xp-card { padding: 20px; }
+  .xp-card--main { padding: 22px; }
+  .xp-card__head { 
+    gap: 12px; 
+    margin-bottom: 14px; 
+  }
+  .xp-card__icon { 
+    width: 38px; 
+    height: 38px; 
+  }
+  .xp-card__title { font-size: 1rem; }
+  .xp-card__org { font-size: 0.82rem; }
+  .xp-card__meta { font-size: 0.75rem; }
+  .xp-checklist { 
+    gap: 10px; 
+    margin-bottom: 18px; 
+  }
+  .xp-checklist li { 
+    font-size: 0.85rem; 
+    gap: 10px; 
+  }
+  .xp-check { 
+    width: 18px; 
+    height: 18px; 
+    margin-top: 1px; 
+  }
+  .xp-tags { gap: 8px; }
+  .xp-tags li { 
+    font-size: 0.78rem; 
+    padding: 6px 12px; 
+  }
+  .xp-badge { 
+    font-size: 0.7rem; 
+    padding: 4px 12px; 
+    margin-top: 12px; 
+  }
+  .cert-item { 
+    padding: 12px 14px; 
+    gap: 10px; 
+  }
+  .cert-item__icon { 
+    width: 32px; 
+    height: 32px; 
+  }
+  .cert-item__title { font-size: 0.82rem; }
+  .cert-item__org { font-size: 0.72rem; }
+
+  /* ===== CONTACT ===== */
+  .contact { padding-bottom: 48px; }
+  .contact__header { margin-bottom: 32px; }
+  .contact__header .section__title { margin-bottom: 10px; }
+  .contact__desc { 
+    font-size: 0.88rem; 
+    padding: 0 8px; 
+    line-height: 1.6; 
+  }
+  .contact__wrapper { gap: 24px; }
+  .contact__right { 
+    padding: 22px 18px; 
+    border-radius: 16px; 
+  }
+  .contact__form { gap: 14px; }
+  .contact__form .form-row { 
+    grid-template-columns: 1fr; 
+    gap: 14px; 
+  }
+  .contact__form .form-field input, 
+  .contact__form .form-field textarea { 
+    font-size: 0.88rem; 
+    padding: 10px 12px; 
+  }
+  .contact__form .btn--primary { 
+    width: 100%; 
+    justify-content: center; 
+    font-size: 0.85rem; 
+    padding: 12px 20px; 
+    min-width: unset; 
+  }
+  .contact__form .form-note { font-size: 0.75rem; }
+  .status-card { padding: 22px 24px; }
+  .status-card__title { font-size: 1.2rem; }
+  .status-card__desc { font-size: 0.82rem; }
+  .contact-info__item { 
+    padding: 14px 16px; 
+    gap: 12px; 
+  }
+  .contact-info__icon { 
+    width: 34px; 
+    height: 34px; 
+  }
+  .contact-info__value { font-size: 0.85rem; }
+
+  /* ===== FOOTER ===== */
+  .footer__inner { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 20px; 
+  }
+  .footer__left { align-items: center; }
+  .footer__nav { 
+    justify-content: center; 
+    gap: 18px; 
+  }
+  .footer__nav a { font-size: 0.82rem; }
+  .footer__right { align-items: center; }
+  .footer__logo-img { height: 38px; }
+  .footer__tagline { font-size: 0.78rem; }
+  .social-icon { 
+    width: 36px; 
+    height: 36px; 
+  }
+  .social-icon svg { 
+    width: 17px; 
+    height: 17px; 
+  }
+  .footer__copy { font-size: 0.72rem; }
+
+  /* ===== NAVBAR ===== */
+  .navbar { padding: 0.5rem 1rem; }
+  .navbar.is-at-hero-bottom .navbar-inner { 
+    width: calc(100% - 24px); 
+    padding: 0 1rem; 
+    min-height: 46px; 
+  }
+  .navbar-inner { 
+    padding: 0 0.5rem; 
+    min-height: 48px; 
+  }
+  .logo-full { height: 40px; }
+  .navbar.is-at-hero-bottom .logo-full { height: 36px; }
+  .navbar.is-at-hero-bottom .logo-full--dark { 
+    height: 22px; 
+    width: 88px; 
+  }
+  .hamburger span { background: #ffffff; }
+  .navbar.is-at-hero-bottom .hamburger span { 
+    background: var(--c-primary-dark); 
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE (425px and below)
+   ============================================================ */
+@media (max-width: 425px) {
+  /* Layout */
+  .section { padding: 40px 0; }
+  .section__inner, .footer__inner { padding: 0 16px; }
+  .section__title { 
+    font-size: clamp(1.2rem, 5vw, 1.5rem); 
+    margin-bottom: 20px; 
+  }
+  .projects__heading .section__title { 
+    font-size: clamp(1.6rem, 8vw, 2rem); 
+  }
+  .eyebrow { 
+    font-size: 0.6rem; 
+    margin-bottom: 6px; 
+  }
+
+  /* ===== HERO ===== */
+  .hero__inner { padding: 30px 16px 40px; }
+  .hero__greeting { font-size: 0.8rem; }
+  .hero__name { 
+    font-size: clamp(2rem, 12vw, 2.6rem); 
+  }
+  .hero__title { 
+    font-size: 0.9rem; 
+    margin: -2px 0 14px 0; 
+  }
+  .hero__desc { 
+    font-size: 0.82rem; 
+    margin-bottom: 16px; 
+    line-height: 1.5; 
+  }
+  .hero__actions .btn { 
+    padding: 12px 16px; 
+    font-size: 0.8rem; 
+  }
+  .hero__actions .btn--with-icon { padding: 12px 16px; }
+  .hero__actions .btn-icon svg { 
+    width: 16px; 
+    height: 16px; 
+  }
+  .hero__scroll-cue { 
+    bottom: 12px; 
+    width: 18px; 
+    height: 28px; 
+    padding-top: 4px; 
+  }
+  .hero__scroll-cue span { 
+    width: 2px; 
+    height: 6px; 
+  }
+
+  /* ===== ABOUT ===== */
+  .about-lead__paragraph { 
+    font-size: clamp(1.1rem, 7vw, 1.35rem); 
+  }
+  .about-lead__statement { font-size: 0.85rem; }
+
+  /* ===== PROJECTS ===== */
+  .projects__grid { gap: 14px; }
+  .project-card__body { 
+    padding: 14px; 
+    gap: 8px; 
+  }
+  .project-card__title { font-size: 0.9rem; }
+  .project-card__desc { font-size: 0.78rem; }
+  .project-card__tech { gap: 4px; }
+  .project-card__tech li { 
+    font-size: 0.55rem; 
+    padding: 2px 6px; 
+  }
+  .project-card__actions { 
+    padding-top: 8px; 
+    gap: 8px; 
+    flex-wrap: wrap; 
+  }
+  .link-btn { 
+    font-size: 0.7rem; 
+    padding: 5px 10px; 
+  }
+  .device-frame { padding: 16px; }
+
+  /* ===== SKILLS ===== */
+  .skill-group { 
+    padding: 18px 16px; 
+    border-radius: 16px; 
+  }
+  .skill-group__head { 
+    gap: 8px; 
+    margin-bottom: 12px; 
+  }
+  .skill-group__icon { 
+    width: 30px; 
+    height: 30px; 
+  }
+  .skill-group__icon svg { 
+    width: 16px; 
+    height: 16px; 
+  }
+  .skill-group__title { font-size: 0.85rem; }
+  .skill-tags { gap: 6px; }
+  .skill-tags li { 
+    font-size: 0.7rem; 
+    padding: 4px 10px; 
+  }
+  .skills__subtitle { 
+    font-size: 0.82rem; 
+    margin: -16px auto 24px; 
+  }
+
+  /* ===== EXPERIENCE ===== */
+  .xp-card { 
+    padding: 16px; 
+    border-radius: 16px; 
+  }
+  .xp-card--main { padding: 18px; }
+  .xp-card__head { 
+    gap: 10px; 
+    margin-bottom: 12px; 
+  }
+  .xp-card__icon { 
+    width: 34px; 
+    height: 34px; 
+  }
+  .xp-card__icon svg { 
+    width: 16px; 
+    height: 16px; 
+  }
+  .xp-card__label { font-size: 0.6rem; }
+  .xp-card__title { font-size: 0.9rem; }
+  .xp-card__org { font-size: 0.78rem; }
+  .xp-card__meta { font-size: 0.7rem; }
+  .xp-checklist { 
+    gap: 8px; 
+    margin-bottom: 14px; 
+  }
+  .xp-checklist li { 
+    font-size: 0.8rem; 
+    gap: 8px; 
+  }
+  .xp-check { 
+    width: 16px; 
+    height: 16px; 
+  }
+  .xp-check svg { 
+    width: 10px; 
+    height: 10px; 
+  }
+  .xp-tags { gap: 6px; }
+  .xp-tags li { 
+    font-size: 0.7rem; 
+    padding: 4px 10px; 
+  }
+  .xp-badge { 
+    font-size: 0.65rem; 
+    padding: 3px 10px; 
+    margin-top: 10px; 
+  }
+  .cert-item { 
+    padding: 10px 12px; 
+    gap: 8px; 
+  }
+  .cert-item__icon { 
+    width: 28px; 
+    height: 28px; 
+  }
+  .cert-item__icon svg { 
+    width: 14px; 
+    height: 14px; 
+  }
+  .cert-item__title { font-size: 0.78rem; }
+  .cert-item__org { font-size: 0.68rem; }
+
+  /* ===== CONTACT ===== */
+  .contact { padding-bottom: 40px; }
+  .contact__header { margin-bottom: 24px; }
+  .contact__header .section__title { font-size: 1.3rem; }
+  .contact__desc { font-size: 0.82rem; }
+  .contact__right { 
+    padding: 16px 14px; 
+    border-radius: 14px; 
+  }
+  .contact__form { gap: 12px; }
+  .contact__form .form-field label { font-size: 0.55rem; }
+  .contact__form .form-field input, 
+  .contact__form .form-field textarea { 
+    font-size: 0.82rem; 
+    padding: 8px 10px; 
+    border-radius: 8px; 
+  }
+  .contact__form .form-row { gap: 12px; }
+  .contact__form .btn--primary { 
+    font-size: 0.8rem; 
+    padding: 10px 16px; 
+    border-radius: 8px; 
+  }
+  .contact__form .btn--primary .btn-icon svg { 
+    width: 16px; 
+    height: 16px; 
+  }
+  .contact__form .form-status { font-size: 0.8rem; }
+  .contact__form .form-note { font-size: 0.7rem; }
+  .status-card { 
+    padding: 16px 18px; 
+    border-radius: 14px; 
+  }
+  .status-card__label { 
+    font-size: 0.55rem; 
+    margin-bottom: 8px; 
+  }
+  .status-dot { 
+    width: 6px; 
+    height: 6px; 
+  }
+  .status-card__title { 
+    font-size: 1rem; 
+    margin-bottom: 6px; 
+  }
+  .status-card__desc { 
+    font-size: 0.78rem; 
+    line-height: 1.5; 
+  }
+  .contact-info__item { 
+    padding: 10px 12px; 
+    gap: 10px; 
+    border-radius: 10px; 
+  }
+  .contact-info__icon { 
+    width: 30px; 
+    height: 30px; 
+  }
+  .contact-info__icon svg { 
+    width: 14px; 
+    height: 14px; 
+  }
+  .contact-info__label { font-size: 0.55rem; }
+  .contact-info__value { font-size: 0.78rem; }
+
+  /* ===== FOOTER ===== */
+  .footer { padding: 30px 0 24px; }
+  .footer__inner { gap: 14px; }
+  .footer__nav { gap: 12px; }
+  .footer__nav a { font-size: 0.75rem; }
+  .footer__logo-img { height: 30px; }
+  .footer__tagline { font-size: 0.7rem; }
+  .social-icon { 
+    width: 32px; 
+    height: 32px; 
+  }
+  .social-icon svg { 
+    width: 15px; 
+    height: 15px; 
+  }
+  .footer__copy { font-size: 0.65rem; }
+
+  /* ===== NAVBAR ===== */
+  .navbar { padding: 0.4rem 0.75rem; }
+  .navbar.is-at-hero-bottom .navbar-inner { 
+    width: calc(100% - 16px); 
+    padding: 0 0.75rem; 
+    min-height: 42px; 
+  }
+  .navbar-inner { 
+    padding: 0 0.25rem; 
+    min-height: 42px; 
+  }
+  .logo-full { height: 32px; }
+  .navbar.is-at-hero-bottom .logo-full { height: 28px; }
+  .navbar.is-at-hero-bottom .logo-full--dark { 
+    height: 20px; 
+    width: 80px; 
+  }
+  .hamburger { gap: 4px; }
+  .hamburger span { 
+    width: 18px; 
+    height: 2px; 
+  }
+  .hamburger.is-active span:nth-child(1) { 
+    transform: rotate(45deg) translate(4px, 4px); 
+  }
+  .hamburger.is-active span:nth-child(3) { 
+    transform: rotate(-45deg) translate(4px, -4px); 
+  }
+  .mobile-menu { 
+    top: 64px; 
+    left: 0.75rem; 
+    right: 0.75rem; 
+    padding: 1rem; 
+    border-radius: 1rem; 
+  }
+  .mobile-link { 
+    font-size: 0.9rem; 
+    padding: 0.6rem 0; 
+  }
+  .mobile-say-hi { 
+    font-size: 0.85rem; 
+    padding: 0.7rem 1rem; 
+  }
+}
+
+/* ============================================================
+   EXTRA SMALL (320px and below)
+   ============================================================ */
+@media (max-width: 320px) {
+  .hero__name { font-size: 1.8rem; }
+  .hero__desc { font-size: 0.75rem; }
+  .section__title { font-size: 1.1rem; }
+  .status-card__title { font-size: 0.9rem; }
+  .contact__right { padding: 12px 10px; }
+  .footer__nav { gap: 8px; }
+  .footer__nav a { font-size: 0.7rem; }
+  .social-icon { 
+    width: 28px; 
+    height: 28px; 
+  }
+  .social-icon svg { 
+    width: 13px; 
+    height: 13px; 
+  }
+}

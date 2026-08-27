@@ -1,0 +1,105 @@
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills {
+  background: var(--c-bg);
+}
+
+.eyebrow--skills {
+  color: var(--skill-mint);
+  text-align: center;
+}
+
+.skills__title {
+  text-align: center;
+}
+
+.skills__subtitle {
+  font-size: 1rem;
+  color: var(--c-muted);
+  max-width: 46ch;
+  margin: -28px auto 44px;
+  text-align: center;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skill-group {
+  background: var(--c-white);
+  border: 1px solid var(--c-bg);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 1px 2px rgba(20, 20, 15, 0.03);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.skill-group:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-group__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.skill-group__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-group__icon--mint {
+  background: var(--skill-mint-bg);
+  color: var(--skill-mint);
+}
+
+.skill-group__icon--orange {
+  background: var(--skill-orange-bg);
+  color: var(--skill-orange);
+}
+
+.skill-group__icon--purple {
+  background: var(--skill-purple-bg);
+  color: var(--skill-purple);
+}
+
+.skill-group__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--c-primary-dark);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags li {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--c-primary-dark);
+  background: var(--c-white);
+  border: 1.5px solid var(--c-light-gray);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.skill-tags li:hover {
+  background: var(--c-primary-dark);
+  color: #fff;
+  border-color: var(--c-primary-dark);
+}
