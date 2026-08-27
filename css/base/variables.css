@@ -61,3 +61,46 @@
   --xp-card-bg: var(--c-bg);
   --xp-card-border: var(--c-bg);
 }
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   Applied when <html data-theme="dark">. Flips the core tokens
+   so Projects, About, Skills, Experience, and Contact (the
+   sections using these variables) switch to a dark theme that
+   matches the fluid-flow canvas background.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --c-primary-dark: #ECF0F1;
+  --c-secondary-dark: #CBD5E1;
+  --c-muted: #94A3B8;
+  --c-light-gray: rgba(236, 240, 241, 0.16);
+  --c-bg: #0b1220;
+  --c-white: #111a2e;
+  --c-highlight: #60A5FA;
+
+  --about-accent: var(--c-highlight);
+  --about-ink: var(--c-primary-dark);
+  --about-muted: var(--c-secondary-dark);
+
+  --card-bg: rgba(236, 240, 241, 0.06);
+  --card-label: var(--c-primary-dark);
+  --card-icon: var(--c-primary-dark);
+
+  --skill-mint-bg: rgba(96, 165, 250, 0.16);
+  --skill-mint: var(--c-highlight);
+  --skill-orange-bg: rgba(236, 240, 241, 0.08);
+  --skill-orange: var(--c-secondary-dark);
+  --skill-purple-bg: rgba(236, 240, 241, 0.06);
+  --skill-purple: var(--c-primary-dark);
+
+  --xp-mint-bg: rgba(96, 165, 250, 0.16);
+  --xp-mint: var(--c-highlight);
+  --xp-orange-bg: rgba(236, 240, 241, 0.08);
+  --xp-orange: var(--c-secondary-dark);
+  --xp-card-bg: rgba(236, 240, 241, 0.04);
+  --xp-card-border: rgba(236, 240, 241, 0.1);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.5);
+}

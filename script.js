@@ -1,5 +1,5 @@
 /* =========================================================
-   KennDev Portfolio — Header positioning + interactions
+   KennDev Portfolio — Main interactions
    ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateHeroBottom();
   handleScroll();
 
-  /* ---------- Logo click -> scroll to top ---------- */
+  /* Logo click -> scroll to top */
   const logoLink = document.getElementById('logoLink');
   if (logoLink) {
     logoLink.addEventListener('click', function(e) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ---------- Mobile menu toggle ---------- */
+  /* Mobile menu toggle */
   let menuOpen = false;
 
   function openMobileMenu() {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ---------- Smooth scroll for nav buttons ---------- */
+  /* Smooth scroll for nav buttons */
   function scrollToTarget(selector) {
     const el = document.querySelector(selector);
     if (el) {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* ---------- Hero scroll cue ---------- */
+  /* Hero scroll cue */
   const scrollCue = document.getElementById('scrollCue');
   if (scrollCue) {
     scrollCue.addEventListener('click', function() {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ---------- Scroll progress bar ---------- */
+  /* Scroll progress bar */
   const scrollProgress = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function() {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, { passive: true });
 
-  /* ---------- Reveal-on-scroll ---------- */
+  /* Reveal-on-scroll */
   const revealEls = document.querySelectorAll('[data-reveal]');
   const revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry, i) {
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     revealObserver.observe(el);
   });
 
-  /* ---------- Contact form validation ---------- */
+  /* Contact form validation */
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   const formStatus = document.getElementById('formStatus');
@@ -236,12 +236,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  /* ---------- Close mobile menu on Escape ---------- */
+  /* Close mobile menu on Escape */
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && menuOpen) {
       closeMobileMenu();
     }
   });
 
-  console.log('✦ KennDev Portfolio — Fully Responsive');
+  /* Theme toggle */
+  const THEME_KEY = 'kenndev-theme';
+  const themeToggleBtns = document.querySelectorAll('[data-theme-toggle]');
+
+  function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeToggleBtns.forEach(function (btn) {
+      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  }
+
+  applyTheme(getPreferredTheme());
+
+  themeToggleBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    });
+  });
+
+  /* Fluid flow backgrounds */
+  if (window.FluidFlowBackground && 'ResizeObserver' in window && 'IntersectionObserver' in window) {
+    document.querySelectorAll('[data-flow-bg]').forEach(function (canvas) {
+      new FluidFlowBackground(canvas);
+    });
+  }
+
+  console.log('✦ KennDev Portfolio');
 });

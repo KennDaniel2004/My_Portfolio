@@ -160,7 +160,7 @@ body {
 }
 
 .logo-full {
-  height: 35px;
+  height: 30px;
   width: auto;
   display: block;
   transition: height 0.4s ease, opacity 0.3s ease;

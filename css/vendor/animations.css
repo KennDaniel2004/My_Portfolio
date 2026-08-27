@@ -1,0 +1,105 @@
+/* ============================================================
+   ANIMATIONS & KEYFRAMES - Essential animations only
+   ============================================================ */
+
+/* 1. JUMPING DOT ANIMATION (Hero - "i" dot) */
+@keyframes dotJump {
+  0%, 82%, 100% { transform: translate(-50%, 0); }
+  86% { transform: translate(-50%, -10px); }
+  90% { transform: translate(-50%, 0); }
+  94% { transform: translate(-50%, -5px); }
+  97% { transform: translate(-50%, 0); }
+}
+
+/* 2. LETTER WAVE ANIMATION (Hero - "Junior Developer") */
+@keyframes letterWave {
+  0%, 72% { transform: translateY(0) rotate(0deg); }
+  76% { transform: translateY(-5px) rotate(-2deg); }
+  80% { transform: translateY(3px) rotate(2deg); }
+  84% { transform: translateY(-3px) rotate(-1.5deg); }
+  88% { transform: translateY(2px) rotate(1deg); }
+  92%, 100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* 3. BOUNCE DOWN ANIMATION (Buttons) */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(6px) scale(1.1); }
+  50% { transform: translateY(0) scale(1); }
+  70% { transform: translateY(3px) scale(1.05); }
+  90% { transform: translateY(0) scale(1); }
+}
+
+/* 4. SCROLL CUE ANIMATION (Hero scroll indicator) */
+@keyframes scrollcue {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* 5. FADE IN / REVEAL ANIMATION - Handled by JS with data-reveal */
+/* Base styles in utilities.css */
+
+/* 6. PULSE ANIMATION (Status indicators) */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* ============================================================
+   UTILITY CLASSES - Only the ones actually used
+   ============================================================ */
+
+/* Used on status dot */
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   RESPONSIVE ANIMATION SETTINGS
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+  }
+  
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   COMPONENT-SPECIFIC ANIMATIONS
+   ============================================================ */
+
+/* Hero title letter animation */
+.hero__title span {
+  display: inline-block;
+  animation: letterWave 4s ease-in-out infinite;
+}
+
+/* Hero dot animation */
+.i-dot {
+  animation: dotJump 2.8s ease-in-out infinite;
+}
+
+/* Button bounce icon animation */
+.btn--bounce-icon .btn-icon {
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+/* Scroll cue animation */
+.hero__scroll-cue span {
+  animation: scrollcue 1.8s ease-in-out infinite;
+}
+
+/* Status dot pulse */
+.status-dot {
+  animation: pulse 2s ease-in-out infinite;
+}

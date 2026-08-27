@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluid Flow Grid · CSS + JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* base */
+        body {
+            margin: 0;
+            background: #080d1a;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #080d1a;
+        }
+        .mix-blend-difference {
+            mix-blend-mode: difference;
+        }
+        .pointer-events-none {
+            pointer-events: none;
+        }
+        /* overlay text styles */
+        .text-blue-400 {
+            color: #60a5fa;
+        }
+        .tracking-tighter {
+            letter-spacing: -0.05em;
+        }
+        .leading-none {
+            line-height: 1;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        .font-black {
+            font-weight: 900;
+        }
+        .tracking-widest {
+            letter-spacing: 0.1em;
+        }
+        .relative {
+            position: relative;
+        }
+        .z-10 {
+            z-index: 10;
+        }
+        .h-full {
+            height: 100%;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-col {
+            flex-direction: column;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .mb-3 {
+            margin-bottom: 0.75rem;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .max-w-lg {
+            max-width: 32rem;
+        }
+        .opacity-70 {
+            opacity: 0.7;
+        }
+        .text-xs {
+            font-size: 0.75rem;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+        }
+        .text-6xl {
+            font-size: 3.75rem;
+        }
+        .md\:text-9xl {
+            font-size: 8rem;
+        }
+        .md\:text-sm {
+            font-size: 0.875rem;
+        }
+        @media (min-width: 768px) {
+            .md\:text-9xl {
+                font-size: 8rem;
+            }
+            .md\:text-sm {
+                font-size: 0.875rem;
+            }
+        }
+        /* dark mode bg for container */
+        .bg-slate-950 {
+            background-color: #0f172a;
+        }
+        .text-white {
+            color: #fff;
+        }
+        /* canvas container */
+        .canvas-wrapper {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #080d1a;
+        }
+        .canvas-wrapper canvas {
+            position: absolute;
+            inset: 0;
+            display: block;
+            cursor: default;
+        }
+        /* overlay content */
+        .overlay-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 0 1rem;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            color: white;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="canvas-wrapper">
+        <canvas id="flowCanvas"></canvas>
+
+        <!-- overlay content (identical to demo) -->
+        <div class="overlay-content">
+            <span class="font-mono text-xs tracking-widest uppercase mb-3 text-blue-400">
+                <!-- FLUID_VECTOR_STREAM -->
+            </span>
+            <h1 class="font-mono text-6xl md:text-9xl font-black tracking-tighter uppercase leading-none">
+                CURRENT
+            </h1>
+            <p class="mt-4 font-mono text-xs md:text-sm max-w-lg opacity-70">
+                Smooth directional flow field rendered in calm, neutral blue tones.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            "use strict";
+
+            // ---- DOM refs ----
+            const canvas = document.getElementById('flowCanvas');
+            const ctx = canvas.getContext('2d', { alpha: false });
+
+            let width = 0;
+            let height = 0;
+            let animationFrame = null;
+
+            // ---- dark mode detection (prefers-color-scheme) ----
+            let isDarkMode = true;
+
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            isDarkMode = mediaQuery.matches;
+
+            const darkModeHandler = (e) => {
+                isDarkMode = e.matches;
+            };
+            mediaQuery.addEventListener('change', darkModeHandler);
+
+            // ---- mouse state with smooth interpolation ----
+            const mouse = {
+                x: -1000,
+                y: -1000,
+                targetX: -1000,
+                targetY: -1000,
+            };
+
+            // ---- resize ----
+            function handleResize() {
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
+                ctx.scale(dpr, dpr);
+            }
+
+            // ---- mouse events ----
+            function handleMouseMove(e) {
+                mouse.targetX = e.clientX;
+                mouse.targetY = e.clientY;
+            }
+
+            function handleMouseLeave() {
+                mouse.targetX = -1000;
+                mouse.targetY = -1000;
+            }
+
+            // ---- init resize & events ----
+            handleResize();
+            window.addEventListener('resize', handleResize);
+            window.addEventListener('mousemove', handleMouseMove);
+            window.addEventListener('mouseleave', handleMouseLeave);
+
+            // ---- render loop ----
+            let time = 0;
+
+            function render() {
+                time += 0.008;
+
+                // smooth mouse interpolation
+                mouse.x += (mouse.targetX - mouse.x) * 0.08;
+                mouse.y += (mouse.targetY - mouse.y) * 0.08;
+
+                // color scheme
+                const bgColor = isDarkMode ? '#080d1a' : '#f0f7ff';
+                const lineBaseColor = isDarkMode ? '59, 130, 246' : '30, 64, 175';
+                const accentBlue = isDarkMode ? '147, 197, 253' : '29, 78, 216';
+
+                // fill background
+                ctx.fillStyle = bgColor;
+                ctx.fillRect(0, 0, width, height);
+
+                // grid settings
+                const spacing = 35;
+                const cols = Math.ceil(width / spacing) + 1;
+                const rows = Math.ceil(height / spacing) + 1;
+
+                ctx.lineWidth = 1.2;
+
+                // loop through grid points
+                for (let i = 0; i < cols; i++) {
+                    for (let j = 0; j < rows; j++) {
+                        const x = i * spacing;
+                        const y = j * spacing;
+
+                        // base angle from sine/cos turbulence
+                        let angle = Math.sin(x * 0.003 + time) + Math.cos(y * 0.003 + time);
+
+                        // mouse force field
+                        const dx = mouse.x - x;
+                        const dy = mouse.y - y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        let isNear = false;
+                        if (dist < 220 && dist > 0) {
+                            isNear = true;
+                            const pushAngle = Math.atan2(dy, dx) + Math.PI;
+                            const force = (1 - dist / 220);
+                            angle = angle * (1 - force) + pushAngle * force;
+                        }
+
+                        // line length: longer near mouse
+                        const lineLen = isNear ? 22 : 14;
+                        const x2 = x + Math.cos(angle) * lineLen;
+                        const y2 = y + Math.sin(angle) * lineLen;
+
+                        // alpha: brighter near mouse, else subtle wave
+                        const alpha = isNear
+                            ? 0.8
+                            : (0.15 + Math.sin(x * 0.01 + y * 0.01 + time) * 0.1);
+
+                        // stroke color
+                        ctx.strokeStyle = isNear
+                            ? `rgba(${accentBlue}, ${alpha})`
+                            : `rgba(${lineBaseColor}, ${alpha})`;
+
+                        ctx.beginPath();
+                        ctx.moveTo(x, y);
+                        ctx.lineTo(x2, y2);
+                        ctx.stroke();
+                    }
+                }
+
+                // continue loop
+                animationFrame = requestAnimationFrame(render);
+            }
+
+            // start animation
+            render();
+
+            // ---- cleanup on page unload ----
+            window.addEventListener('beforeunload', function() {
+                if (animationFrame) cancelAnimationFrame(animationFrame);
+                window.removeEventListener('resize', handleResize);
+                window.removeEventListener('mousemove', handleMouseMove);
+                window.removeEventListener('mouseleave', handleMouseLeave);
+                mediaQuery.removeEventListener('change', darkModeHandler);
+            });
+
+        })();
+    </script>
+
+</body>
+</html>

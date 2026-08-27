@@ -145,7 +145,12 @@
   font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--c-light-gray);
+  /* Was var(--c-light-gray), which flips to a near-transparent
+     rgba(236,240,241,0.16) in dark mode (meant for subtle borders,
+     not text) — invisible against the hero's dark background.
+     The hero never changes with the theme toggle, so use a fixed
+     solid color instead. */
+  color: #BDC3C7;
   margin: -4px 0 28px 0;
   line-height: 1.1;
   display: inline-flex;
@@ -237,7 +242,12 @@
 
 .btn--primary {
   background: #ffffff;
-  color: var(--c-primary-dark);
+  /* Was var(--c-primary-dark), which flips to a LIGHT color in dark
+     mode (see variables.css). The hero itself never changes with the
+     theme toggle (always the dark video + scrim), so this button
+     shouldn't either — fixed dark navy keeps it readable on the
+     white background in both themes. */
+  color: #2C3E50;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -245,7 +255,10 @@
 .btn--primary:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  background: var(--c-bg);
+  /* Was var(--c-bg), which flips dark in dark mode and would hide
+     the (now fixed) dark text against it. Fixed light hover color
+     to match the fixed text color above. */
+  background: #ECF0F1;
   border-color: rgba(255, 255, 255, 0.6);
 }
 

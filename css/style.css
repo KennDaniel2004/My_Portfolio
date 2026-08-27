@@ -1,10 +1,11 @@
-/* ===== BASE (Foundation) ===== */
+/*  BASE (Foundation)  */
 @import 'base/variables.css';
 @import 'base/reset.css';
 @import 'base/typography.css';
 @import 'base/utilities.css';
 
-/* ===== COMPONENTS (Furniture) ===== */
+
+/*  COMPONENTS (Furniture) */
 @import 'components/navbar.css';
 @import 'components/hero.css';
 @import 'components/about.css';
@@ -14,8 +15,10 @@
 @import 'components/contact.css';
 @import 'components/footer.css';
 
-/* ===== VENDOR (Extras) ===== */
+
+/*  VENDOR (Extras)  */
 @import 'vendor/animations.css';
 
-/* ===== RESPONSIVE (Must be LAST) ===== */
+
+/*  RESPONSIVE (Must be LAST)  */
 @import 'responsive.css';

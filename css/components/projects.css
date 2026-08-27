@@ -174,8 +174,8 @@
 
 /* Phone frame */
 .device-frame--phone {
-  aspect-ratio: 16 / 11;
-  padding: 14px;
+  aspect-ratio: 4 / 5;
+  padding: 24px;
 }
 
 .device-frame__phone {
@@ -238,23 +238,6 @@
   background: #000;
 }
 
-.project-card__tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 4px;
-}
-
-.project-card__tech li {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--c-secondary-dark);
-  background: var(--c-bg);
-  border: 1px solid var(--c-light-gray);
-  padding: 3px 8px;
-  border-radius: 999px;
-}
-
 .project-card__actions {
   margin-top: auto;
   padding-top: 16px;
@@ -304,4 +287,20 @@
   color: var(--c-primary-dark);
   transform: translateY(-2px);
   box-shadow: none;
+}
+
+/* Dark-mode: "Visit Site" button */
+[data-theme="dark"] .link-btn {
+  background: var(--c-highlight);
+  color: #0b1220;
+}
+[data-theme="dark"] .link-btn:hover {
+  background: #93C5FD;
+}
+[data-theme="dark"] .link-btn--ghost {
+  background: transparent;
+  color: var(--c-muted);
+}
+[data-theme="dark"] .link-btn--ghost:hover {
+  color: var(--c-primary-dark);
 }

@@ -41,7 +41,16 @@
       </nav>
  
       <div class="nav-actions">
-        <a href="#contact" class="say-hi-btn">Say Hi 👋</a>
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="#contact" class="say-hi-btn">Say Hi </a>
       </div>
  
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
@@ -60,6 +69,16 @@
       <button class="mobile-link" data-target="#skills">Skills</button>
       <button class="mobile-link" data-target="#experience">Experience</button>
       <a href="#contact" class="mobile-say-hi">Say Hi 👋</a>
+      <button class="theme-toggle theme-toggle--mobile" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span class="theme-toggle__label">Toggle theme</span>
+      </button>
     </div>
   </div>
  
@@ -137,9 +156,68 @@
         </div>
       </div>
     </section>
+
+
+
+     <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
+      <div class="section__inner">
+        
+        <div class="about-lead">
+          <div class="about-lead__grid">
+ 
+            <div class="about-lead__intro" data-reveal>
+              <h2 class="about-lead__eyebrow">About</h2>
+              <p class="about-lead__paragraph">
+                I&rsquo;m Kenn Daniel, a <span class="about-lead__hl">Junior Developer</span> who enjoys turning ideas into applications that people can actually use. I work across <span class="about-lead__hl--green">mobile</span>, <span class="about-lead__hl--green">desktop</span> and <span class="about-lead__hl--green">web development</span>, UI/UX, networking, and <span class="about-lead__hl--green">technical support</span>, always looking for new ways to learn, build, and solve real-world problems through technology.
+              </p>
+            </div>
+ 
+            <div class="about-lead__side" data-reveal>
+              <p class="about-lead__statement">
+                I&rsquo;m actively seeking my first full-time opportunity in IT or software development where I can grow my skills, contribute to a team, and continue building solutions that make a meaningful difference.
+              </p>
+ 
+              <div class="about-lead__cards">
+                <a href="../AboutMe/about.html" class="about-card" data-target="#about-more">
+                  <span class="about-card__image">
+                    <img src="assets/avatar1.png" alt="Illustrated avatar of Kenn in business attire" loading="lazy" />
+                  </span>
+                  <span class="about-card__footer">
+                    <span class="about-card__label">See More About Me</span>
+                    <svg class="about-card__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
+                    </svg>
+                  </span>
+                </a>
+ 
+                <a href="assets/Document/KennDaniel_Resume.pdf" class="about-card" download>
+                  <span class="about-card__image">
+                    <img src="assets/avatar2.png" alt="Illustrated avatar of Kenn holding a phone" loading="lazy" />
+                  </span>
+                  <span class="about-card__footer">
+                    <span class="about-card__label">Download Resume</span>
+                    <svg class="about-card__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+ 
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+
+
+    
  
     <!-- ===================== PROJECTS ===================== -->
     <section class="section projects" id="projects">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="section__inner">
         <div class="projects__heading">
           <h2 class="section__title" data-reveal>Recent Projects</h2>
@@ -282,60 +360,11 @@
       </div>
     </section>
  
-    <!-- ===================== ABOUT ===================== -->
-    <section class="section about" id="about">
-      <div class="section__inner">
-        
-        <div class="about-lead">
-          <div class="about-lead__grid">
- 
-            <div class="about-lead__intro" data-reveal>
-              <h2 class="about-lead__eyebrow">About</h2>
-              <p class="about-lead__paragraph">
-                I&rsquo;m Kenn Daniel, a <span class="about-lead__hl">Junior Developer</span> who enjoys turning ideas into applications that people can actually use. I work across <span class="about-lead__hl--green">mobile</span>, <span class="about-lead__hl--green">desktop</span> and <span class="about-lead__hl--green">web development</span>, UI/UX, networking, and <span class="about-lead__hl--green">technical support</span>, always looking for new ways to learn, build, and solve real-world problems through technology.
-              </p>
-            </div>
- 
-            <div class="about-lead__side" data-reveal>
-              <p class="about-lead__statement">
-                I&rsquo;m actively seeking my first full-time opportunity in IT or software development where I can grow my skills, contribute to a team, and continue building solutions that make a meaningful difference.
-              </p>
- 
-              <div class="about-lead__cards">
-                <a href="../AboutMe/about.html" class="about-card" data-target="#about-more">
-                  <span class="about-card__image">
-                    <img src="assets/avatar1.png" alt="Illustrated avatar of Kenn in business attire" loading="lazy" />
-                  </span>
-                  <span class="about-card__footer">
-                    <span class="about-card__label">See More About Me</span>
-                    <svg class="about-card__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>
-                    </svg>
-                  </span>
-                </a>
- 
-                <a href="assets/Document/KennDaniel_Resume.pdf" class="about-card" download>
-                  <span class="about-card__image">
-                    <img src="assets/avatar2.png" alt="Illustrated avatar of Kenn holding a phone" loading="lazy" />
-                  </span>
-                  <span class="about-card__footer">
-                    <span class="about-card__label">Download Resume</span>
-                    <svg class="about-card__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
- 
-          </div>
-        </div>
- 
-      </div>
-    </section>
+   
  
     <!-- ===================== SKILLS ===================== -->
     <section class="section skills" id="skills">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="section__inner">
         <p class="eyebrow eyebrow--skills" data-reveal>What I Know</p>
         <h2 class="section__title skills__title" data-reveal>Skills &amp; Technologies</h2>
@@ -408,6 +437,7 @@
  
     <!-- ===================== EXPERIENCE & EDUCATION ===================== -->
     <section class="section experience" id="experience">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="section__inner">
         <p class="eyebrow eyebrow--experience" data-reveal>Background</p>
         <h2 class="section__title experience__title" data-reveal>Experience &amp; Education</h2>
@@ -524,6 +554,7 @@
  
     <!-- ===================== CONTACT ===================== -->
     <section class="section contact" id="contact">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="section__inner">
         <div class="contact__header" data-reveal>
           <p class="eyebrow">Get In Touch</p>
@@ -674,6 +705,7 @@
   </footer>
  
   <!-- ===== UPDATED: Script stays the same ===== -->
+  <script src="fluid-bg.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
