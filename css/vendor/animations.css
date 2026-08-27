@@ -1,6 +1,5 @@
-/* ============================================================
-   ANIMATIONS & KEYFRAMES - Essential animations only
-   ============================================================ */
+/* ANIMATIONS & KEYFRAMES - Essential animations only */
+
 
 /* 1. JUMPING DOT ANIMATION (Hero - "i" dot) */
 @keyframes dotJump {
@@ -55,9 +54,7 @@
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* ============================================================
-   RESPONSIVE ANIMATION SETTINGS
-   ============================================================ */
+
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -74,9 +71,7 @@
   }
 }
 
-/* ============================================================
-   COMPONENT-SPECIFIC ANIMATIONS
-   ============================================================ */
+
 
 /* Hero title letter animation */
 .hero__title span {

@@ -1,6 +1,4 @@
-/* =========================================================
-   KennDev Portfolio — Main interactions
-   ========================================================= */
+
 document.addEventListener('DOMContentLoaded', function() {
 
   const navbar = document.getElementById('navbar');
@@ -271,10 +269,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  /* Fluid flow backgrounds */
-  if (window.FluidFlowBackground && 'ResizeObserver' in window && 'IntersectionObserver' in window) {
+
+    /* Kinetic grid backgrounds */
+  if (window.KineticGridBackground && 'ResizeObserver' in window && 'IntersectionObserver' in window) {
     document.querySelectorAll('[data-flow-bg]').forEach(function (canvas) {
-      new FluidFlowBackground(canvas);
+      new KineticGridBackground(canvas);
     });
   }
 

@@ -1,6 +1,6 @@
-/* ============================================================
-   Utility Classes
-   ============================================================ */
+
+   /* Utility Classes */
+
 /* Layout */
 .section {
   padding: 100px 0;
@@ -57,3 +57,34 @@
   transition: width 0.1s linear;
   pointer-events: none;
 }
+
+
+
+/* Section grid background canvas */
+.section-bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+  display: block;
+  cursor: default;
+}
+
+/* Ensure content sits above the canvas */
+.section > .section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Light mode override for canvas background */
+:root:not([data-theme="dark"]) .section-bg-canvas {
+  background: #f6f9ff;
+}
+
+/* Dark mode override for canvas background */
+:root[data-theme="dark"] .section-bg-canvas {
+  background: #0b1220;
+}
+
