@@ -93,6 +93,8 @@
   font-size: 0.88rem;
   color: var(--c-muted);
   line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Device Frames */

@@ -360,9 +360,8 @@
   }
 }
 
-/* ============================================================
-   SMALL MOBILE (425px and below)
-   ============================================================ */
+   /* SMALL MOBILE (425px and below) */
+
 @media (max-width: 425px) {
   /* Layout */
   .section { padding: 40px 0; }
@@ -655,9 +654,8 @@
   }
 }
 
-/* ============================================================
-   EXTRA SMALL (320px and below)
-   ============================================================ */
+   /* EXTRA SMALL (320px and below) */
+   
 @media (max-width: 320px) {
   .hero__name { font-size: 1.8rem; }
   .hero__desc { font-size: 0.75rem; }
