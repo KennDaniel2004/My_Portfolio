@@ -202,9 +202,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return raw;
         }
 
+        // Card size must track the same breakpoints as gallery.css / responsive.css.
+        // Without this, the inline width/height set below always wins over the
+        // CSS media queries (inline styles beat stylesheet rules), so the cards
+        // stayed 400x400 on every screen size and overflowed the wrapper on mobile.
+        function getCardSize() {
+            const vw = window.innerWidth;
+            if (vw <= 480) return { w: 220, h: 220 };
+            if (vw <= 768) return { w: 300, h: 300 };
+            return { w: CONFIG.cardWidth, h: CONFIG.cardHeight };
+        }
+
         function render() {
-            const w = CONFIG.cardWidth;
-            const h = CONFIG.cardHeight;
+            const { w, h } = getCardSize();
+            if (stage) {
+                stage.style.width = w + 'px';
+                stage.style.height = h + 'px';
+            }
             const radiusPx = calcRadius(CONFIG.radius, w, h);
             const dim = 1 - clamp(CONFIG.opacity, 0, 100) / 100;
             const dur = CONFIG.transitionDuration;
@@ -301,12 +315,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        function step(dir) {
-            if (isLocked) return;
-            const next = mod(activeIndex + dir, n);
-            lockAndGo(next);
-        }
-
         function lockAndGo(index) {
             if (isLocked) return;
             isLocked = true;
@@ -329,15 +337,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, ms);
             autoplayEnabled = true;
-            render();
-        }
-
-        function stopAutoplay() {
-            if (autoplayTimer) {
-                clearInterval(autoplayTimer);
-                autoplayTimer = null;
-            }
-            autoplayEnabled = false;
             render();
         }
 
@@ -375,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
             startAutoplay();
 
             console.log('🎠 OJT Experience Gallery ready!');
-            console.log(`📸 ${n} projects loaded. Use arrow keys or click dots.`);
+            console.log(`📸 ${n} projects loaded. Click the dots to jump to a slide.`);
         }
 
         if (document.readyState === 'loading') {
@@ -521,6 +520,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
             diffObserver.observe(diffPanel);
         }
+    }
+
+    // ================================================================
+    //  THEME TOGGLE (light / dark — persists across the whole site)
+    // ================================================================
+    (function() {
+        'use strict';
+
+        const THEME_KEY = 'kenndev-theme';
+        const themeToggleBtns = document.querySelectorAll('[data-theme-toggle]');
+
+        function getPreferredTheme() {
+            const saved = localStorage.getItem(THEME_KEY);
+            if (saved === 'light' || saved === 'dark') return saved;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeToggleBtns.forEach(function (btn) {
+                btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+                btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+                const label = btn.querySelector('.theme-toggle__label');
+                if (label) label.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+            });
+        }
+
+        applyTheme(getPreferredTheme());
+
+        themeToggleBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                localStorage.setItem(THEME_KEY, next);
+                applyTheme(next);
+            });
+        });
+    })();
+
+    // ================================================================
+    //  KINETIC GRID BACKGROUNDS (matches main site)
+    // ================================================================
+    if (window.KineticGridBackground && 'ResizeObserver' in window && 'IntersectionObserver' in window) {
+        document.querySelectorAll('[data-flow-bg]').forEach(function (canvas) {
+            new KineticGridBackground(canvas);
+        });
     }
 
     console.log('👋 Thanks for visiting my About page!');

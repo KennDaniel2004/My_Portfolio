@@ -39,6 +39,15 @@
       </nav>
 
       <div class="nav-actions">
+        <button class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
         <a href="/index.html#contact" class="say-hi-btn">Say Hi</a>
       </div>
 
@@ -58,6 +67,16 @@
       <a href="/index.html#skills" class="mobile-link">Skills</a>
       <a href="/index.html#experience" class="mobile-link">Experience</a>
       <a href="/index.html#contact" class="mobile-say-hi">Say Hi</a>
+      <button class="theme-toggle theme-toggle--mobile" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span class="theme-toggle__label">Dark Mode</span>
+      </button>
     </div>
   </div>
 
@@ -68,6 +87,7 @@
 
     <!-- ===== HERO / ABOUT HEADER ===== -->
     <section class="about-hero">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="about-hero__inner">
         <div class="about-hero__grid">
           <div class="about-hero__left">
@@ -120,6 +140,7 @@
 
     <!-- ===== HOW I BUILD APPLICATIONS ===== -->
     <section class="section article-section" id="how-i-build">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="article-shell">
 
         <header class="article-header">
@@ -293,17 +314,19 @@
                   <span class="diff-panel__file"><i class="fas fa-file-code"></i> submit-form.js — after review</span>
                   <span class="diff-panel__badge">− 1,746 lines</span>
                 </div>
-                <div class="diff-panel__spacer"></div>
-                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>class UserFormSubmissionValidationHandlerServiceFactory {</div>
-                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>&nbsp;&nbsp;constructor(deps) { this.deps = deps; /* 40 more lines */ }</div>
-                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>&nbsp;&nbsp;validateAndProcessAndLogAndRetryAsync(data) { ... }</div>
-                <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>}</div>
-                <div class="diff-line diff-line--context">&nbsp;</div>
-                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>function submitForm(data) {</div>
-                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>&nbsp;&nbsp;if (!isValid(data)) return showError();</div>
-                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>&nbsp;&nbsp;api.save(data);</div>
-                <div class="diff-line diff-line--add"><span class="diff-marker">+</span>}</div>
-                <div class="diff-panel__spacer"></div>
+                <div class="diff-panel__scroll">
+                  <div class="diff-panel__spacer"></div>
+                  <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>class UserFormSubmissionValidationHandlerServiceFactory {</div>
+                  <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>&nbsp;&nbsp;constructor(deps) { this.deps = deps; /* 40 more lines */ }</div>
+                  <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>&nbsp;&nbsp;validateAndProcessAndLogAndRetryAsync(data) { ... }</div>
+                  <div class="diff-line diff-line--remove"><span class="diff-marker">−</span>}</div>
+                  <div class="diff-line diff-line--context">&nbsp;</div>
+                  <div class="diff-line diff-line--add"><span class="diff-marker">+</span>function submitForm(data) {</div>
+                  <div class="diff-line diff-line--add"><span class="diff-marker">+</span>&nbsp;&nbsp;if (!isValid(data)) return showError();</div>
+                  <div class="diff-line diff-line--add"><span class="diff-marker">+</span>&nbsp;&nbsp;api.save(data);</div>
+                  <div class="diff-line diff-line--add"><span class="diff-marker">+</span>}</div>
+                  <div class="diff-panel__spacer"></div>
+                </div>
               </div>
 
               <div class="diff-stat">
@@ -367,6 +390,7 @@
 
     <!-- ===== ADDITIONAL EXPERIENCE ===== -->
     <section class="section additional-section">
+      <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
       <div class="section__inner">
         <h2 class="section-title"><i class="fas fa-list-ul"></i> Additional Experience</h2>
         <div class="additional-card">
@@ -421,6 +445,7 @@
   </footer>
 
   <!-- ===== EXTERNAL JAVASCRIPT ===== -->
+  <script src="/fluid-bg.js"></script>
   <script src="about.js"></script>
 </body>
 </html>

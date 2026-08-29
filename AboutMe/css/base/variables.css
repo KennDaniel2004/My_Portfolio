@@ -6,7 +6,6 @@
   /* ---------- About page palette ---------- */
   --bg: #ffffff;
   --bg-alt: #fafbfc;
-  --nav-bg: #eef0f2;
   --text-primary: #14171a;
   --text-secondary: #565f6b;
   --text-muted: #8a94a1;
@@ -27,14 +26,32 @@
   /* ---------- Shared tokens — match the main KennDev site ---------- */
   --c-primary-dark: #2C3E50;
   --c-secondary-dark: #34495E;
-  --c-muted: #7F8C8D;
-  --c-light-gray: #BDC3C7;
   --c-bg: #ECF0F1;
-  --c-white: #ffffff;
 
   --container: 1200px;
-  --nav-h: 76px;
 
   --shadow-md: 0 8px 24px rgba(44, 62, 80, 0.10);
   --shadow-lg: 0 20px 48px rgba(44, 62, 80, 0.16);
+}
+
+/* ============================================================
+   DARK MODE — About page palette
+   ============================================================ */
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --bg-alt: #101a30;
+  --text-primary: #eef2f7;
+  --text-secondary: #a8b2c4;
+  --text-muted: #6d7890;
+  --accent: #6e9bff;
+  --border: #22304a;
+  --card-bg: #101a30;
+
+  --diff-remove: #ff8a80;
+  --diff-remove-bg: rgba(255, 107, 92, 0.12);
+  --diff-add: #5ee2a0;
+  --diff-add-bg: rgba(46, 196, 130, 0.12);
+
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.45);
 }

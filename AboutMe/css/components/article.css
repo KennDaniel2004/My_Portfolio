@@ -7,6 +7,8 @@
 }
 
 .article-shell {
+  position: relative;
+  z-index: 1;
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 32px;
@@ -517,6 +519,11 @@
   overflow: hidden;
   margin: 1.5rem 0 1rem;
   border: 1px solid #14171a;
+}
+
+.diff-panel__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .diff-panel__header {

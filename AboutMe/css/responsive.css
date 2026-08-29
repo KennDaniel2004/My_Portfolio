@@ -146,6 +146,15 @@
   }
   .arch-node { max-width: 100%; }
 
+  .diff-panel__header {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .diff-line {
+    font-size: 0.72rem;
+    padding: 0.05rem 0.85rem;
+  }
+
   /* Additional experience */
   .additional-card {
     padding: 1.1rem 1.25rem;
