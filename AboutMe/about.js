@@ -179,9 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Clean Code\nMVC Architecture',
             subtitle: 'Development Philosophy',
             desc: 'Separating concerns · DAO · Service Layer · Modular'
-        }, 
-   
-    ];
+        }
+        ];
 
         let activeIndex = 0;
         let isLocked = false;

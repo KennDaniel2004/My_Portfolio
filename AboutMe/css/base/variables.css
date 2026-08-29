@@ -1,0 +1,40 @@
+/* ============================================================
+   VARIABLES & DESIGN TOKENS — About Page
+   ============================================================ */
+
+:root {
+  /* ---------- About page palette ---------- */
+  --bg: #ffffff;
+  --bg-alt: #fafbfc;
+  --nav-bg: #eef0f2;
+  --text-primary: #14171a;
+  --text-secondary: #565f6b;
+  --text-muted: #8a94a1;
+  --accent: #3b6fe0;
+  --border: #e6e8eb;
+  --card-bg: #ffffff;
+
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --diff-remove: #b3372c;
+  --diff-remove-bg: #fdf1f0;
+  --diff-add: #1f8a5f;
+  --diff-add-bg: #edfaf3;
+
+  --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  /* ---------- Shared tokens — match the main KennDev site ---------- */
+  --c-primary-dark: #2C3E50;
+  --c-secondary-dark: #34495E;
+  --c-muted: #7F8C8D;
+  --c-light-gray: #BDC3C7;
+  --c-bg: #ECF0F1;
+  --c-white: #ffffff;
+
+  --container: 1200px;
+  --nav-h: 76px;
+
+  --shadow-md: 0 8px 24px rgba(44, 62, 80, 0.10);
+  --shadow-lg: 0 20px 48px rgba(44, 62, 80, 0.16);
+}

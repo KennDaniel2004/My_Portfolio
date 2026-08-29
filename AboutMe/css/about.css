@@ -1,0 +1,16 @@
+/*  BASE (Foundation)  */
+@import 'base/variables.css';
+@import 'base/reset.css';
+
+
+/*  COMPONENTS (Furniture)  */
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/gallery.css';
+@import 'components/article.css';
+@import 'components/additional.css';
+@import 'components/footer.css';
+
+
+/*  RESPONSIVE (Must be LAST)  */
+@import 'responsive.css';

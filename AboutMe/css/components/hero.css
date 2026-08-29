@@ -1,0 +1,141 @@
+/* ============================================================
+   ABOUT HERO
+   ============================================================ */
+
+.about-hero {
+  padding: 140px 0 40px;
+}
+
+.about-hero__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.about-hero__grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  margin-bottom: 0.85rem;
+  flex-shrink: 0;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-caption {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.about-hero__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.about-hero__title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.about-hero__paragraph {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.about-hero__status {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-hero__cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-top: 0.4rem;
+}
+
+.cta-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: opacity 0.2s ease;
+}
+
+.cta-link--primary {
+  color: var(--accent);
+}
+
+.cta-link--secondary {
+  color: var(--text-primary);
+}
+
+.cta-link:hover {
+  opacity: 0.75;
+}
+
+/* ============================================================
+   SHARED SECTION WRAPPER (used by gallery, article, additional)
+   ============================================================ */
+
+.section {
+  padding: 40px 0 60px;
+}
+
+.section__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title i {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
