@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
 
   const navbar = document.getElementById('navbar');
@@ -224,13 +223,52 @@ document.addEventListener('DOMContentLoaded', function() {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
-      setTimeout(function() {
-        formStatus.textContent = 'Thanks, ' + fields.name.el.value.trim() + '! Your message has been sent.';
-        formStatus.classList.add('is-success');
+      try {
+        if (typeof firebase === 'undefined' || !window.db) {
+          throw new Error('Firebase failed to load. Check firebase-init.js config and your network connection.');
+        }
+
+        const payload = {
+          name: fields.name.el.value.trim(),
+          email: fields.email.el.value.trim(),
+          subject: fields.subject.el.value.trim(),
+          message: fields.message.el.value.trim(),
+          status: 'new',
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+
+        const writePromise = window.db.collection('messages').add(payload);
+        const timeoutPromise = new Promise(function(_, reject) {
+          setTimeout(function() { reject(new Error('Request timed out.')); }, 15000);
+        });
+
+        Promise.race([writePromise, timeoutPromise])
+          .then(function() {
+            formStatus.textContent = 'Thanks, ' + payload.name + '! Your message has been sent.';
+            formStatus.classList.remove('is-error');
+            formStatus.classList.add('is-success');
+            form.reset();
+          })
+          .catch(function(err) {
+            console.error('Contact form submit error:', err);
+            formStatus.textContent = 'Something went wrong sending your message. Please email me directly at kenndanield@gmail.com.';
+            formStatus.classList.remove('is-success');
+            formStatus.classList.add('is-error');
+          })
+          .finally(function() {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          });
+      } catch (err) {
+        // Catches synchronous errors (e.g. Firebase SDK never loaded) that would
+        // otherwise skip the .catch()/.finally() above and freeze the button.
+        console.error('Contact form setup error:', err);
+        formStatus.textContent = 'Form is temporarily unavailable. Please email me directly at kenndanield@gmail.com.';
+        formStatus.classList.remove('is-success');
+        formStatus.classList.add('is-error');
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';
-        form.reset();
-      }, 900);
+      }
     });
   }
 
