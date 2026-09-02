@@ -10,12 +10,12 @@
 */
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCCjeyus9QIU0Bmu5lsmUFNnIAf3Zeb-uU",
+  authDomain: "contacts-2bf5a.firebaseapp.com",
+  projectId: "contacts-2bf5a",
+  storageBucket: "contacts-2bf5a.firebasestorage.app",
+  messagingSenderId: "924776340530",
+  appId: "1:924776340530:web:1e9f56346b521d128ff02b"
 };
 
 firebase.initializeApp(firebaseConfig);

@@ -228,23 +228,64 @@ document.addEventListener('DOMContentLoaded', function() {
           throw new Error('Firebase failed to load. Check firebase-init.js config and your network connection.');
         }
 
+        const name = fields.name.el.value.trim();
+        const email = fields.email.el.value.trim();
+        const subject = fields.subject.el.value.trim();
+        const message = fields.message.el.value.trim();
+
         const payload = {
-          name: fields.name.el.value.trim(),
-          email: fields.email.el.value.trim(),
-          subject: fields.subject.el.value.trim(),
-          message: fields.message.el.value.trim(),
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
           status: 'new',
           createdAt: firebase.firestore.FieldValue.serverTimestamp()
         };
 
-        const writePromise = window.db.collection('messages').add(payload);
-        const timeoutPromise = new Promise(function(_, reject) {
-          setTimeout(function() { reject(new Error('Request timed out.')); }, 15000);
-        });
+        const timeoutPromise = function() {
+          return new Promise(function(_, reject) {
+            setTimeout(function() { reject(new Error('Request timed out.')); }, 15000);
+          });
+        };
 
-        Promise.race([writePromise, timeoutPromise])
-          .then(function() {
-            formStatus.textContent = 'Thanks, ' + payload.name + '! Your message has been sent.';
+        // Save to Firestore
+        const writePromise = window.db.collection('messages').add(payload);
+
+        // Email notification via EmailJS (independent of Firestore —
+        // one failing doesn't block the other)
+        let emailPromise = Promise.resolve();
+        if (typeof emailjs !== 'undefined' && window.EMAILJS_SERVICE_ID && window.EMAILJS_TEMPLATE_ID) {
+          emailPromise = emailjs.send(window.EMAILJS_SERVICE_ID, window.EMAILJS_TEMPLATE_ID, {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+          });
+        } else {
+          console.warn('EmailJS not loaded — message will still be saved to Firestore, but no email notification will be sent.');
+        }
+
+        Promise.race([
+          Promise.allSettled([writePromise, emailPromise]),
+          timeoutPromise()
+        ])
+          .then(function(results) {
+            // If timeoutPromise wins the race, results is undefined — treat as failure.
+            if (!results) throw new Error('Request timed out.');
+
+            const firestoreOk = results[0] && results[0].status === 'fulfilled';
+            if (results[0] && results[0].status === 'rejected') {
+              console.error('Firestore save failed:', results[0].reason);
+            }
+            if (results[1] && results[1].status === 'rejected') {
+              console.error('EmailJS send failed:', results[1].reason);
+            }
+
+            if (!firestoreOk) {
+              throw new Error('Message could not be saved.');
+            }
+
+            formStatus.textContent = 'Thanks, ' + name + '! Your message has been sent.';
             formStatus.classList.remove('is-error');
             formStatus.classList.add('is-success');
             form.reset();
