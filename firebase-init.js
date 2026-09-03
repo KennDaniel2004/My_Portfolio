@@ -20,5 +20,5 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// Exposed globally so script.js can use it without an import/bundler step.
+// Exposed globally so main.js can use it without an import/bundler step.
 window.db = firebase.firestore();
