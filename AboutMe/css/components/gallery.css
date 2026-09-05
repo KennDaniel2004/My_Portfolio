@@ -8,6 +8,7 @@
 
 .gallery-wrapper {
   position: relative;
+  z-index: 1;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -18,7 +19,7 @@
   justify-content: center;
   perspective: 1600px;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 100%);
+  background: transparent;
   outline: none;
 }
 
@@ -133,4 +134,8 @@
 
 .gallery-nav-dot:hover {
   background: rgba(255, 255, 255, 0.6);
+}
+
+.gallery-wrapper.is-dragging {
+  cursor: grabbing;
 }

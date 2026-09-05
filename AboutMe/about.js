@@ -192,6 +192,53 @@ document.addEventListener('DOMContentLoaded', function() {
         const stage = document.getElementById('galleryStage');
         const dotsContainer = document.getElementById('galleryDots');
 
+        // ---------- Lightbox ----------
+        const lightbox = document.getElementById('galleryLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxSubtitle = document.getElementById('lightboxSubtitle');
+        const lightboxClose = document.getElementById('lightboxClose');
+        let wasAutoplaying = false;
+
+        function openLightbox(slide) {
+            if (!lightbox) return;
+            lightboxImg.src = slide.image;
+            lightboxImg.alt = (slide.title || '').replace(/\n/g, ' ');
+            lightboxTitle.textContent = (slide.title || '').replace(/\n/g, ' ');
+            lightboxSubtitle.textContent = slide.subtitle || '';
+
+            wasAutoplaying = !!autoplayTimer;
+            if (autoplayTimer) {
+                clearInterval(autoplayTimer);
+                autoplayTimer = null;
+            }
+
+            lightbox.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            if (!lightbox) return;
+            lightbox.classList.remove('is-open');
+            document.body.style.overflow = '';
+            if (wasAutoplaying) {
+                startAutoplay();
+            }
+        }
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+        if (lightbox) {
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
+        });
 
         function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
@@ -253,8 +300,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.transform = transform;
                 card.style.transition = transitionCss;
                 card.style.opacity = visible ? 1 : 0;
-                card.style.cursor = (isActive || autoplayEnabled) ? 'default' : 'pointer';
-                card.style.pointerEvents = (visible && !autoplayEnabled) ? 'auto' : 'none';
+
+                // FIX: the active (front) card must stay clickable even while
+                // autoplay is running, so it can always open the lightbox.
+                // Side cards keep the old behavior (only clickable when autoplay is off).
+                card.style.cursor = isActive ? 'zoom-in' : (autoplayEnabled ? 'default' : 'pointer');
+                card.style.pointerEvents = (visible && (isActive || !autoplayEnabled)) ? 'auto' : 'none';
+
                 card.dataset.index = i;
 
                 const img = document.createElement('img');
@@ -291,8 +343,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.appendChild(dimEl);
 
                 card.addEventListener('click', () => {
-                    if (autoplayEnabled || isLocked) return;
-                    goTo(i);
+                    if (isLocked) return;
+                    if (isActive) {
+                        openLightbox(slide);
+                    } else if (!autoplayEnabled) {
+                        goTo(i);
+                    }
                 });
 
                 stage.appendChild(card);
@@ -558,9 +614,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })();
 
-    // ================================================================
-    //  KINETIC GRID BACKGROUNDS (matches main site)
-    // ================================================================
     if (window.KineticGridBackground && 'ResizeObserver' in window && 'IntersectionObserver' in window) {
         document.querySelectorAll('[data-flow-bg]').forEach(function (canvas) {
             new KineticGridBackground(canvas);

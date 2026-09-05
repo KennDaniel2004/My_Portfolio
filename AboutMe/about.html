@@ -126,17 +126,45 @@
       </div>
     </section>
 
-    <!-- ===== OJT EXPERIENCE GALLERY ===== -->
-    <section class="section gallery-section">
-      <div class="section__inner">
-        <h2 class="section-title"><i class="fas fa-images"></i> OJT Experience &amp; Projects</h2>
-      </div>
 
-      <div class="gallery-wrapper" id="galleryWrapper" role="group" aria-roledescription="carousel" aria-label="OJT experience and projects, playing automatically">
-        <div class="gallery-stage" id="galleryStage"></div>
-        <div class="gallery-nav-dots" id="galleryDots"></div>
+
+
+    <!-- ===== OJT EXPERIENCE GALLERY ===== -->
+<section class="section gallery-section">
+  <canvas class="section-bg-canvas" data-flow-bg aria-hidden="true"></canvas>
+  <div class="section__inner">
+    <h2 class="section-title"><i class="fas fa-images"></i> OJT Experience &amp; Projects</h2>
+  </div>
+
+  <div class="gallery-wrapper" id="galleryWrapper" role="group" aria-roledescription="carousel" aria-label="OJT experience and projects, playing automatically">
+    <div class="gallery-stage" id="galleryStage"></div>
+    <div class="gallery-nav-dots" id="galleryDots"></div>
+  </div>
+</section>
+
+
+
+  <!-- ===== GALLERY LIGHTBOX ===== -->
+  <div class="lightbox-overlay" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Project image preview">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="" />
+      <div class="lightbox-caption">
+        <span id="lightboxTitle"></span>
+        <span id="lightboxSubtitle"></span>
       </div>
-    </section>
+    </div>
+  </div>
+
+
+
+
+
 
     <!-- ===== HOW I BUILD APPLICATIONS ===== -->
     <section class="section article-section" id="how-i-build">
@@ -169,6 +197,8 @@
               <li><a href="#ch-08" data-chapter="ch-08"><span class="chapter-num">08</span><span class="chapter-label-text">What I Learn</span></a></li>
             </ol>
           </nav>
+
+          
 
           <!-- ===== ARTICLE CONTENT ===== -->
           <div class="article-content">
